@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>html5前端图片上传预览效果</title>
+    <style>
+    .file{
+    height: 103px;
+    width: 103px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  /*//  color: red;*/
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+        border:none;
+ 
+    }
+    .file input{
+    height: 110px;
+    width: 110px;
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    z-index: 999;
+    }
+ 
+    .file img{
+    position: absolute;
+    /*border-radius: 100%;*/
+    height: 100px;
+    left: 1px;
+    width: 100px;
+    right: 0;
+    top: 0;
+        border: none;
+    }
+    </style>
+</head>
+<body>
+<a href="javascript:;" class="file" id="localImag">
+    <input type="file" name="" id="file"/>
+    <img src="./image/spare.png" id="preImg">
+</a>
+<script type="text/javascript">
+	var fe = document.getElementById("file");
+	var img = document.getElementById("preImg");
+	fe.onchange = function() {
+	    var reader = new FileReader();
+	    var _file = this.files[0];
+	    console.log(reader);
+	    console.log(_file);
+	    reader.readAsDataURL(_file);
+	    console.log(reader);
+	    reader.onload = function() {
+	        img.setAttribute('src', this.result)
+	    }
+	}
+</script>
+</body>
+</html>
