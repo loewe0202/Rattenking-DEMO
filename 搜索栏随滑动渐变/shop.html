@@ -226,24 +226,6 @@
 	    $(window).scroll(function() {
 	        setCoverOpacity()
 	    });
-	
-	    function GetPageScroll() {
-	        var x, y;
-	        if (window.pageYOffset) {
-	            y = window.pageYOffset;
-	            x = window.pageXOffset
-	        } else if (document.documentElement && document.documentElement.scrollTop) {
-	            y = document.documentElement.scrollTop;
-	            x = document.documentElement.scrollLeft
-	        } else if (document.body) {
-	            y = document.body.scrollTop;
-	            x = document.body.scrollLeft
-	        }
-	        return {
-	            X: x,
-	            Y: y
-	        }
-	    }
 	});
 </script>
 </body>
