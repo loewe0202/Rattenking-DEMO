@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>html5前端图片上传预览效果</title>
+    <style>
+    body{margin: 0;}
+    .file{
+    	display:block;
+	    height: 120px;
+	    width: 120px;
+	    position: relative;
+	    margin: 0 auto;
+	    overflow: hidden;
+	    text-decoration: none;
+	    text-indent: 0;
+        border:none;
+        margin-top: 20px;
+    }
+    .file input{
+	    height: 120px;
+	    width: 120px;
+	    font-size: 100px;
+	    margin: 0;
+	    padding: 0;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    opacity: 0;
+	    z-index: 999;
+    }
+    .file img{
+    	width: 120px;
+    	height: 120px;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+        border: none;
+    }
+    #img-box{
+    	text-align: center;
+    	width: 100%;
+    	height: 120px;
+    	margin: 0;
+    	margin-top: 20px;
+    }
+    #img-box img{
+    	width: 120px;
+    	height: 120px;
+    	margin-right: 10px;
+    	border: 1px solid #eee;
+    }
+    </style>
+</head>
+<body>
+<div class="fixed">
+	<a href="javascript:;" class="file" id="localImag">
+	    <input type="file" id="file" multiple="multiple"/>
+	    <img src="images/tu.png" id="preImg">
+	</a>
+	<p id="img-box"></p>
+</div>
+<script type="text/javascript">
+	(function(){
+		//获取页面的input标签
+		var file = document.getElementById("file");
+		
+		//获取图片路径方法
+		function getObjectURL(file) {
+		    var url = null ; 
+		    if (window.createObjectURL!=undefined) { // basic
+		        url = window.createObjectURL(file) ;
+		    } else if (window.URL!=undefined) { // mozilla(firefox)
+		        url = window.URL.createObjectURL(file) ;
+		    } else if (window.webkitURL!=undefined) { // webkit or chrome
+		        url = window.webkitURL.createObjectURL(file) ;
+		    }
+		    return url ;
+		}
+		
+		//给input绑定change事件
+		file.onchange = function() {
+			//接受files数组列表
+			var _file = this.files,str = "";
+			
+			//限制上传图片的最大值
+			if(_file.length >= 4){
+				alert("最多上传三张图片！");
+				return false;
+			}
+			
+			//循环拼接为字符串
+			for(var i = 0; i < _file.length; i++){
+				str += "<img src='" + getObjectURL(_file[i]) + "'/>";
+			}
+			
+			//将图片动态添加到图片展示区
+			document.getElementById("img-box").innerHTML = str;
+		}
+	})()
+</script>
+</body>
+</html>
