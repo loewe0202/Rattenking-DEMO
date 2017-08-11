@@ -39,7 +39,7 @@ html {
 body {
     margin: 0;
     line-height: 1;
-    background: #410510;
+    background: #fff;
     font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
 }
 html {
@@ -101,48 +101,75 @@ b, strong {  font-weight: normal;  }
     border-bottom: 1px solid #d5d5d5;
 }
 .module-content{
-    width: 990px;
+    min-width: 320px;
+    max-width: 750px;
+    width: 100%;
     margin: 0 auto;
     background: #410510;
 }
-.section{padding-bottom: 50px;}
 .goods-list-li{
-	width: 194px;
+	width: 46%;
+	padding: 2%;
 	float: left;
-	margin-top: 20px;
-	margin-right: 5px;
-}
-.goods-list-li:nth-child(5n){
-	margin-right: 0;
-}
-.goods-list-li img{
-	width: 194px;
-	height: 250px;
-	display: block;
 }
 .goods-detail{
-	padding: 10px;
+	padding: .5rem 3%;
 	background: #8e0e17;
 }
 .goods-name{
 	color: #fff;
-	font-size: 14px;
-	line-height: 18px;
-	height: 36px;
+	font-size: 1.1rem;
+	line-height: 1.5rem;
+	height: 3rem;
 	overflow: hidden;
 }
 .goods-price{
-	font-size: 24px;
+	font-size: 2rem;
 	color: #f9f44a;
-	height: 50px;
-	line-height: 50px;
-	margin-top: 10px;
+	height: 3rem;
+	line-height: 3.5rem;
 }
 .goods-price em{
-	font-size: 14px;
+	font-size: 1.2rem;
 }
-.goods-detail .goods-price img{
-	width: 50px;
-	height: 50px;
+.goods-price img{
+	width: 2.5rem;
+	height: 2.5rem;
 	float: right;
+	margin-top: .5rem;
+}
+.scroll-layer{
+	width: 100%;
+	background: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+.scroll-layer p{
+	height: 4rem;
+	line-height: 2rem;
+	font-size: 1.3rem;
+	padding-left: 10px;
+}
+.scroll-layer input{
+	height: 3rem;
+	line-height: 3rem;
+	border: 1px solid #eee;
+	width: 100%;
+	outline: none;
+	margin: 0;
+	padding: 0 0 0 1rem;
+}
+.scroll-layer button{
+	margin: 10px 10%;
+	width: 80%;
+	border: none;
+	outline: none;
+	background: lightblue;
+	color: #fff;
+	height: 3rem;
+	line-height: 3rem;
+	text-align: center;
+	font-size: 1.2rem;
 }
