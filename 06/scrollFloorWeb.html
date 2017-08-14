@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			.floor-nav{
+				height: auto;
+				width: 50px;
+				text-align: center;
+				position: fixed;
+				top: calc(50% - 250px);
+				left: 0;
+				z-index: 999;
+			}
+			.scroll-nav{
+				display: inline-block;
+				background: #fff;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				cursor: pointer;
+			}
+			.scroll-nav.active{
+				color: #fff;
+				background: yellow;
+			}
+			.scroll-floor{width: 100%;height: 1000px;}
+			.floor1{background: red;}
+			.floor2{background: lightgreen;}
+			.floor3{background: lightskyblue;}
+			.floor4{background: lawngreen;}
+			.floor5{background: lightcoral;}
+		</style>
+	</head>
+	<body>
+		<nav class="floor-nav">
+			<span class="scroll-nav active">F1</span>
+			<span class="scroll-nav">F2</span>
+			<span class="scroll-nav">F3</span>
+			<span class="scroll-nav">F4</span>
+			<span class="scroll-nav">F5</span>
+			<span class="scroll-nav">F6</span>
+			<span class="scroll-nav">F7</span>
+			<span class="scroll-nav">F8</span>
+			<span class="scroll-nav">F9</span>
+			<span class="scroll-nav">F10</span>
+		</nav>
+		<div class="content">
+			<section class="scroll-floor floor1"></section>
+			<section class="scroll-floor floor2"></section>
+			<section class="scroll-floor floor3"></section>
+			<section class="scroll-floor floor4"></section>
+			<section class="scroll-floor floor5"></section>
+			<section class="scroll-floor floor3"></section>
+			<section class="scroll-floor floor1"></section>
+			<section class="scroll-floor floor4"></section>
+			<section class="scroll-floor floor5"></section>
+			<section class="scroll-floor floor2"></section>
+		</div>
+		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery.scroll.floor.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			scrollFloor({
+				floorClass : '.scroll-floor',       //楼层盒子class;默认为'.scroll-floor'
+				navClass : '.scroll-nav',           //导航盒子class;默认为'.scroll-nav'
+				activeClass : 'active',             //导航高亮class;默认为'active'
+				delayTime:300,                      //点击导航，滚动条滑动到该位置的时间间隔;默认为200
+				activeTop:200,                      //楼层到窗口的某个位置时，导航高亮（设置该位置）;默认为100
+				scrollTop:0                         //点击导航，楼层滑动到窗口的某位置;默认为100
+			});
+		</script>
+	</body>
+</html>
