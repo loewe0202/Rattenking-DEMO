@@ -60,44 +60,13 @@
 	</a>
 	<p id="img-box"></p>
 </div>
+<script src="upload_preview.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
-	(function(){
-		//获取页面的input标签
-		var file = document.getElementById("file");
-		
-		//获取图片路径方法
-		function getObjectURL(file) {
-		    var url = null ; 
-		    if (window.createObjectURL!=undefined) { // basic
-		        url = window.createObjectURL(file) ;
-		    } else if (window.URL!=undefined) { // mozilla(firefox)
-		        url = window.URL.createObjectURL(file) ;
-		    } else if (window.webkitURL!=undefined) { // webkit or chrome
-		        url = window.webkitURL.createObjectURL(file) ;
-		    }
-		    return url ;
-		}
-		
-		//给input绑定change事件
-		file.onchange = function() {
-			//接受files数组列表
-			var _file = this.files,str = "";
-			
-			//限制上传图片的最大值
-			if(_file.length >= 4){
-				alert("最多上传三张图片！");
-				return false;
-			}
-			
-			//循环拼接为字符串
-			for(var i = 0; i < _file.length; i++){
-				str += "<img src='" + getObjectURL(_file[i]) + "'/>";
-			}
-			
-			//将图片动态添加到图片展示区
-			document.getElementById("img-box").innerHTML = str;
-		}
-	})()
+	uploadPreview({
+		fileID : "file",                //input的id
+		showID : "img-box",             //预览图片存放的div盒子
+		maxLen : 2                      //允许上传的最大值
+	});
 </script>
 </body>
 </html>
