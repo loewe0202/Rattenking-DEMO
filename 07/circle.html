@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			@import url(https://fonts.googleapis.com/css?family=Lato:100,400);
+			body{background-color: #fff}
+			@-webkit-keyframes load {
+			  0% {
+			    stroke-dashoffset: 0;
+			  }
+			}
+			@keyframes load {
+			  0% {
+			    stroke-dashoffset: 0;
+			  }
+			}
+			.progress {
+			  position: relative;
+			  display: inline-block;
+			  padding: 0;
+			  text-align: center;
+			}
+			.progress > li {
+			  display: inline-block;
+			  position: relative;
+			  text-align: center;
+			  color: #93A2AC;
+			  font-family: Lato;
+			  font-weight: 100;
+			  margin: 2rem;
+			}
+			.progress > li:before {
+			  content: attr(data-name);
+			  position: absolute;
+			  width: 100%;
+			  bottom: -2rem;
+			  font-weight: 400;
+			}
+			.progress > li:after {
+			  content: attr(data-percent);
+			  position: absolute;
+			  width: 100%;
+			  top: 3.7rem;
+			  left: 0;
+			  font-size: 2rem;
+			  text-align: center;
+			}
+			.progress svg {
+			  width: 10rem;
+			  height: 10rem;
+			}
+			.progress svg:nth-child(2) {
+			  position: absolute;
+			  left: 0;
+			  top: 0;
+			  -webkit-transform: rotate(120deg);
+			          transform: rotate(120deg);
+			}
+			.progress svg:nth-child(2) path {
+			  fill: none;
+			  stroke-width: 25;
+			  stroke-dasharray: 629;
+			  stroke-linecap:round;
+			  stroke: #fff;
+			  opacity: .9;
+			  -webkit-animation: load 4s;
+			          animation: load 4s;
+			}
+			@-webkit-keyframes load0 {
+			  0% {
+			    stroke-dashoffset: 329.7;
+			  }
+			}
+			@keyframes load0 {
+			  0% {
+			    stroke-dashoffset: 329.7;
+			  }
+			}
+			#cir{
+				-webkit-animation: load0 4s;
+			          animation: load0 4s;
+			}
+			@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:100,100italic,300,300italic);
+			#h1{
+				text-shadow: 1px 1px #506b1a, 
+				2px 2px #506b1a, 
+				3px 3px #506b1a, 
+				4px 4px #506b1a, 
+				5px 5px #506b1a, 
+				6px 6px #506b1a, 
+				7px 7px #506b1a, 
+				8px 8px #506b1a, 
+				9px 9px #506b1a, 
+				10px 10px #506b1a, 
+				11px 11px #506b1a, 
+				12px 12px #506b1a, 
+				13px 13px #506b1a, 
+				14px 14px #506b1a, 
+				15px 15px #506b1a, 
+				-1px 1px olivedrab, 
+				-2px 2px olivedrab,
+				 -3px 3px olivedrab, 
+				 -4px 4px olivedrab,
+				  -5px 5px olivedrab,
+				   -6px 6px olivedrab,
+				    -7px 7px olivedrab,
+				     -8px 8px olivedrab,
+				      -9px 9px olivedrab,
+				       -10px 10px olivedrab,
+				        -11px 11px olivedrab,
+				         -12px 12px olivedrab,
+				          -13px 13px olivedrab,
+				           -14px 14px olivedrab,
+				            -15px 15px olivedrab,
+				             -1px -1px #90aa5a,
+				              -2px -2px #90aa5a,
+				               -3px -3px #90aa5a,
+				                -4px -4px #90aa5a,
+				                 -5px -5px #90aa5a,
+				                  -6px -6px #90aa5a,
+				                   -7px -7px #90aa5a,
+				                    -8px -8px #90aa5a,
+				                     -9px -9px #90aa5a,
+				                      -10px -10px #90aa5a,
+				                       -11px -11px #90aa5a,
+				                        -12px -12px #90aa5a,
+				                         -13px -13px #90aa5a,
+				                          -14px -14px #90aa5a,
+				                           -15px -15px #90aa5a,
+				                            1px -1px olivedrab,
+				                             2px -2px olivedrab,
+				                              3px -3px olivedrab,
+				                               4px -4px olivedrab,
+				                                5px -5px olivedrab,
+				                                 6px -6px olivedrab,
+				                                  7px -7px olivedrab,
+				                                   8px -8px olivedrab,
+				                                    9px -9px olivedrab,
+				                                     10px -10px olivedrab,
+				                                      11px -11px olivedrab,
+				                                       12px -12px olivedrab,
+				                                        13px -13px olivedrab,
+				                                         14px -14px olivedrab,
+				                                          15px -15px olivedrab,
+				                                           0 -1px #364712,
+				                                            0 -2px #364712,
+				                                             0 -3px #364712,
+				                                              0 -4px #364712,
+				                                               0 -5px #364712,
+				                                                0 -6px #364712,
+				                                                 0 -7px #364712,
+				                                                  0 -8px #364712,
+				                                                   0 -9px #364712,
+				                                                    0 -10px #364712,
+				                                                     0 -11px #364712,
+				                                                      0 -12px #364712,
+				                                                       0 -13px #364712,
+				                                                        0 -14px #364712,
+				                                                         0 -15px #364712,
+				                                                          0 1px #364712,
+				                                                           0 2px #364712,
+				                                                            0 3px #364712,
+				                                                             0 4px #364712,
+				                                                              0 5px #364712,
+				                                                               0 6px #364712,
+				                                                                0 7px #364712,
+				                                                                 0 8px #364712,
+				                                                                  0 9px #364712,
+				                                                                   0 10px #364712,
+				                                                                    0 11px #364712,
+				                                                                     0 12px #364712,
+				                                                                      0 13px #364712,
+				                                                                       0 14px #364712,
+				                                                                        0 15px #364712,
+				                                                                         -1px 0 #90aa5a,
+				                                                                          -2px 0 #90aa5a,
+				                                                                           -3px 0 #90aa5a,
+				                                                                            -4px 0 #90aa5a,
+				                                                                             -5px 0 #90aa5a,
+				                                                                              -6px 0 #90aa5a,
+				                                                                               -7px 0 #90aa5a,
+				                                                                                -8px 0 #90aa5a,
+				                                                                                 -9px 0 #90aa5a,
+				                                                                                  -10px 0 #90aa5a,
+				                                                                                   -11px 0 #90aa5a,
+				                                                                                    -12px 0 #90aa5a,
+				                                                                                     -13px 0 #90aa5a,
+				                                                                                      -14px 0 #90aa5a,
+				                                                                                       -15px 0 #90aa5a,
+				                                                                                        1px 0 #364712,
+				                                                                                         2px 0 #364712,
+				                                                                                          3px 0 #364712,
+				                                                                                           4px 0 #364712,
+				                                                                                            5px 0 #364712,
+				                                                                                             6px 0 #364712,
+				                                                                                              7px 0 #364712,
+				                                                                                               8px 0 #364712,
+				                                                                                                9px 0 #364712,
+				                                                                                                 10px 0 #364712,
+				                                                                                                  11px 0 #364712,
+				                                                                                                   12px 0 #364712,
+				                                                                                                    13px 0 #364712,
+				                                                                                                     14px 0 #364712,
+				                                                                                                      15px 0 #364712;
+				font: 100 150px/1 Alegreya Sans;
+				letter-spacing: 20px;
+				text-align: center;
+				color: goldenrod;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			window.rateFun = function(obj,rate){
+			 	obj.innerHTML = "★★★★★☆☆☆☆☆".slice(5 - rate, 10 - rate); 
+			}
+		</script>
+		<h1 onload="rateFun(this,4)" id="h1">svg</h1>
+		<ul class="progress">
+			<li>
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="webkit-transform: rotate(135deg);transform: rotate(135deg);">
+				<circle cx="80" cy="80" r="70" stroke="#444" stroke-opacity=".6"
+				  	stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="329.7" stroke-dashoffset="0"/>
+				<circle id="cir" cx="80" cy="80" r="70" stroke="red" 
+				  	stroke-width="10" fill="none" stroke-dasharray="329.7" stroke-dashoffset="100" stroke-linecap="round"/>
+				  
+				</svg>
+			</li>
+			<!--  Item  -->
+		    <li data-name="SVG Skill" data-percent="13%">
+		        <svg viewBox="-10 -10 220 220">
+		        <g fill="none" stroke-width="3" transform="translate(100,100)">
+		        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+		        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+		        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+		        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+		        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+		        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+		        </g>
+		        </svg>
+		        <svg viewBox="-10 -10 220 220">
+		        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="81"></path>
+		        </svg>
+		    </li>
+    <!--  Item  -->
+    <li data-name="SVG Skill" data-percent="13%">
+        <svg viewBox="-10 -10 220 220">
+        <g fill="none" stroke-width="3" transform="translate(100,100)">
+        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+        </g>
+        </svg>
+        <svg viewBox="-10 -10 220 220">
+        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="100%"></path>
+        </svg>
+    </li>
+    <!--  Item  -->
+    <li data-name="HTML5 Skill" data-percent="87%">
+        <svg viewBox="-10 -10 220 220">
+        <g fill="none" stroke-width="2" transform="translate(100,100)">
+        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+        </g>
+        </svg>
+        <svg viewBox="-10 -10 220 220">
+        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="547"></path>
+        </svg>
+    </li>
+    <!--  Item  -->
+    <li data-name="jQuery Skill" data-percent="13%">
+        <svg viewBox="-10 -10 220 220">
+        <g fill="none" stroke-width="12" transform="translate(100,100)">
+        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl3)"/>
+        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl4)"/>
+        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl5)"/>
+        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl6)"/>
+        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl1)"/>
+        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl2)"/>
+        </g>
+        </svg>
+        <svg viewBox="-10 -10 220 220">
+        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="81"></path>
+        </svg>
+    </li>
+    <!--  Item  -->
+    <li data-name="UI Skill" data-percent="97%">
+        <svg viewBox="-10 -10 220 220">
+        <g fill="none" stroke-width="9" transform="translate(100,100)">
+        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+        </g>
+        </svg>
+        <svg viewBox="-10 -10 220 220">
+        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="610"></path>
+        </svg>
+    </li>
+    <!--  Item  -->
+    <li data-name="PHP Skill" data-percent="58%">
+        <svg viewBox="-10 -10 220 220">
+        <g fill="none" stroke-width="6" transform="translate(100,100)">
+        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+        </g>
+        </svg>
+        <svg viewBox="-10 -10 220 220">
+        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="364"></path>
+        </svg>
+    </li>
+    <!--  Item  -->
+    <li data-name="CSS Skill" data-percent="100%">
+        <svg viewBox="-10 -10 220 220">
+        <g fill="none" stroke-width="6" transform="translate(100,100)">
+        <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
+        <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
+        <path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)"/>
+        <path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)"/>
+        <path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)"/>
+        <path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)"/>
+        </g>
+        </svg>
+        <svg viewBox="-10 -10 220 220">
+        <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="629"></path>
+        </svg>
+    </li>
+</ul>
+		<!--  Defining Angle Gradient Colors  -->
+		<svg width="0" height="0">
+		<defs>
+		<linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
+		    <stop stop-color="#618099"/>
+		    <stop offset="100%" stop-color="#8e6677"/>
+		</linearGradient>
+		<linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
+		    <stop stop-color="#8e6677"/>
+		    <stop offset="100%" stop-color="#9b5e67"/>
+		</linearGradient>
+		<linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
+		    <stop stop-color="#9b5e67"/>
+		    <stop offset="100%" stop-color="#9c787a"/>
+		</linearGradient>
+		<linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
+		    <stop stop-color="#9c787a"/>
+		    <stop offset="100%" stop-color="#817a94"/>
+		</linearGradient>
+		<linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
+		    <stop stop-color="#817a94"/>
+		    <stop offset="100%" stop-color="#498a98"/>
+		</linearGradient>
+		<linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
+		    <stop stop-color="#498a98"/>
+		    <stop offset="100%" stop-color="#618099"/>
+		</linearGradient>
+		</defs>
+		</svg>
+		<!--<p id="rate"  style="color: blue;font-size: 20px;"></p>-->
+	</body>
+</html>
