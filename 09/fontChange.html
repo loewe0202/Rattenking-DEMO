@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:100,100italic,300,300italic);
+			html,body {
+			  	display: flex;
+			  	align-items: center;
+			  	justify-content: center;
+			  	width: 100%;
+			  	height: 100%;
+			  	margin: 0;
+			    background: linear-gradient(to bottom right, lightblue, lightgreen);
+			    text-rendering: optimizeLegibility;
+			    overflow: hidden;
+			}
+			h1 {
+			  	animation: layerize cubic-bezier(0.68, -0.55, 0.27, 1.55) 12000ms infinite forwards;
+			  	opacity: 0;
+			  	width: 100%;
+			  	color: #fff;
+			  	font: italic 500 15rem "Roboto", sans-serif;
+			  	/*font: 100 150px/1 Alegreya Sans;*/
+			  	cursor: default;
+			  	user-select: none;
+			  	text-align: center;
+			}
+			
+			@keyframes layerize {
+			  	0% {
+			    	opacity: 0;
+			    	transform: translate(0, 0);
+			    	text-shadow: none;
+			  	}
+			  	10% {
+			    	opacity: 1;
+			    	transform: translate(-0.5em, -0.5em);
+			    	text-shadow: 0 0 rgba(255, 0, 0, 0.7), 
+			    	0.03em 0.03em rgba(255, 127, 0, 0.6), 
+			    	0.06em 0.06em rgba(255, 255, 0, 0.5), 
+			    	0.09em 0.09em rgba(0, 255, 0, 0.4), 
+			    	0.12em 0.12em rgba(0, 255, 255, 0.3);
+			    	0.15em 0.15em rgba(0, 0, 255, 0.2);
+			    	0.18em 0.18em rgba(139, 0, 255, 0.1);
+			    }
+			  	20% {
+			    	opacity: .5;
+			    	transform: translate(0, 0);
+			    	text-shadow: 1px 1px #506b1a, 2px 2px #506b1a, 3px 3px #506b1a, 4px 4px #506b1a, 5px 5px #506b1a, 6px 6px #506b1a, 7px 7px #506b1a, 8px 8px #506b1a, 9px 9px #506b1a, 10px 10px #506b1a, 11px 11px #506b1a, 12px 12px #506b1a, 13px 13px #506b1a, 14px 14px #506b1a, 15px 15px #506b1a, -1px 1px olivedrab, -2px 2px olivedrab, -3px 3px olivedrab, -4px 4px olivedrab, -5px 5px olivedrab, -6px 6px olivedrab, -7px 7px olivedrab, -8px 8px olivedrab, -9px 9px olivedrab, -10px 10px olivedrab, -11px 11px olivedrab, -12px 12px olivedrab, -13px 13px olivedrab, -14px 14px olivedrab, -15px 15px olivedrab, -1px -1px #90aa5a, -2px -2px #90aa5a, -3px -3px #90aa5a, -4px -4px #90aa5a, -5px -5px #90aa5a, -6px -6px #90aa5a, -7px -7px #90aa5a, -8px -8px #90aa5a, -9px -9px #90aa5a, -10px -10px #90aa5a, -11px -11px #90aa5a, -12px -12px #90aa5a, -13px -13px #90aa5a, -14px -14px #90aa5a, -15px -15px #90aa5a, 1px -1px olivedrab, 2px -2px olivedrab, 3px -3px olivedrab, 4px -4px olivedrab, 5px -5px olivedrab, 6px -6px olivedrab, 7px -7px olivedrab, 8px -8px olivedrab, 9px -9px olivedrab, 10px -10px olivedrab, 11px -11px olivedrab, 12px -12px olivedrab, 13px -13px olivedrab, 14px -14px olivedrab, 15px -15px olivedrab, 0 -1px #364712, 0 -2px #364712, 0 -3px #364712, 0 -4px #364712, 0 -5px #364712, 0 -6px #364712, 0 -7px #364712, 0 -8px #364712, 0 -9px #364712, 0 -10px #364712, 0 -11px #364712, 0 -12px #364712, 0 -13px #364712, 0 -14px #364712, 0 -15px #364712, 0 1px #364712, 0 2px #364712, 0 3px #364712, 0 4px #364712, 0 5px #364712, 0 6px #364712, 0 7px #364712, 0 8px #364712, 0 9px #364712, 0 10px #364712, 0 11px #364712, 0 12px #364712, 0 13px #364712, 0 14px #364712, 0 15px #364712, -1px 0 #90aa5a, -2px 0 #90aa5a, -3px 0 #90aa5a, -4px 0 #90aa5a, -5px 0 #90aa5a, -6px 0 #90aa5a, -7px 0 #90aa5a, -8px 0 #90aa5a, -9px 0 #90aa5a, -10px 0 #90aa5a, -11px 0 #90aa5a, -12px 0 #90aa5a, -13px 0 #90aa5a, -14px 0 #90aa5a, -15px 0 #90aa5a, 1px 0 #364712, 2px 0 #364712, 3px 0 #364712, 4px 0 #364712, 5px 0 #364712, 6px 0 #364712, 7px 0 #364712, 8px 0 #364712, 9px 0 #364712, 10px 0 #364712, 11px 0 #364712, 12px 0 #364712, 13px 0 #364712, 14px 0 #364712, 15px 0 #364712;
+			    }
+			  	30% {
+			    	opacity: 1;
+			    	transform: translate(0.5em, 0.5em);
+			    	text-shadow: 0 0 rgba(139, 0, 255, 0.7), 
+			    	-0.03em -0.03em rgba(255, 0, 0, 0.6), 
+			    	-0.06em -0.06em rgba(255, 127, 0, 0.5), 
+			    	-0.09em -0.09em rgba(255, 255, 0, 0.4), 
+			    	-0.12em -0.12em rgba(0, 255, 0, 0.3);
+			    	-0.15em -0.15em rgba(0, 255, 255, 0.2);
+			    	-0.18em -0.18em rgba(0, 0, 255, 0.1);
+			    }
+			    40% {
+			    	opacity: .5;
+			    	transform: translate(0, 0);
+			    	text-shadow: 1px 1px #506b1a, 2px 2px #506b1a, 3px 3px #506b1a, 4px 4px #506b1a, 5px 5px #506b1a, 6px 6px #506b1a, 7px 7px #506b1a, 8px 8px #506b1a, 9px 9px #506b1a, 10px 10px #506b1a, 11px 11px #506b1a, 12px 12px #506b1a, 13px 13px #506b1a, 14px 14px #506b1a, 15px 15px #506b1a, -1px 1px olivedrab, -2px 2px olivedrab, -3px 3px olivedrab, -4px 4px olivedrab, -5px 5px olivedrab, -6px 6px olivedrab, -7px 7px olivedrab, -8px 8px olivedrab, -9px 9px olivedrab, -10px 10px olivedrab, -11px 11px olivedrab, -12px 12px olivedrab, -13px 13px olivedrab, -14px 14px olivedrab, -15px 15px olivedrab, -1px -1px #90aa5a, -2px -2px #90aa5a, -3px -3px #90aa5a, -4px -4px #90aa5a, -5px -5px #90aa5a, -6px -6px #90aa5a, -7px -7px #90aa5a, -8px -8px #90aa5a, -9px -9px #90aa5a, -10px -10px #90aa5a, -11px -11px #90aa5a, -12px -12px #90aa5a, -13px -13px #90aa5a, -14px -14px #90aa5a, -15px -15px #90aa5a, 1px -1px olivedrab, 2px -2px olivedrab, 3px -3px olivedrab, 4px -4px olivedrab, 5px -5px olivedrab, 6px -6px olivedrab, 7px -7px olivedrab, 8px -8px olivedrab, 9px -9px olivedrab, 10px -10px olivedrab, 11px -11px olivedrab, 12px -12px olivedrab, 13px -13px olivedrab, 14px -14px olivedrab, 15px -15px olivedrab, 0 -1px #364712, 0 -2px #364712, 0 -3px #364712, 0 -4px #364712, 0 -5px #364712, 0 -6px #364712, 0 -7px #364712, 0 -8px #364712, 0 -9px #364712, 0 -10px #364712, 0 -11px #364712, 0 -12px #364712, 0 -13px #364712, 0 -14px #364712, 0 -15px #364712, 0 1px #364712, 0 2px #364712, 0 3px #364712, 0 4px #364712, 0 5px #364712, 0 6px #364712, 0 7px #364712, 0 8px #364712, 0 9px #364712, 0 10px #364712, 0 11px #364712, 0 12px #364712, 0 13px #364712, 0 14px #364712, 0 15px #364712, -1px 0 #90aa5a, -2px 0 #90aa5a, -3px 0 #90aa5a, -4px 0 #90aa5a, -5px 0 #90aa5a, -6px 0 #90aa5a, -7px 0 #90aa5a, -8px 0 #90aa5a, -9px 0 #90aa5a, -10px 0 #90aa5a, -11px 0 #90aa5a, -12px 0 #90aa5a, -13px 0 #90aa5a, -14px 0 #90aa5a, -15px 0 #90aa5a, 1px 0 #364712, 2px 0 #364712, 3px 0 #364712, 4px 0 #364712, 5px 0 #364712, 6px 0 #364712, 7px 0 #364712, 8px 0 #364712, 9px 0 #364712, 10px 0 #364712, 11px 0 #364712, 12px 0 #364712, 13px 0 #364712, 14px 0 #364712, 15px 0 #364712;
+			    }
+			    50% {
+			    	opacity: 1;
+			    	transform: translate(-0.5em, 0.5em);
+			    	text-shadow: 0 0 rgba(0, 0, 255, 0.7), 
+			    	0.03em -0.03em rgba(139, 0, 255, 0.6), 
+			    	0.06em -0.06em rgba(255, 0, 0, 0.5), 
+			    	0.09em -0.09em rgba(255, 127, 0, 0.4), 
+			    	0.12em -0.12em rgba(255, 255, 0, 0.3);
+			    	0.15em -0.15em rgba(0, 255, 0, 0.2);
+			    	0.18em -0.18em rgba(0, 255, 255, 0.1);
+			    }
+			    60% {
+			    	opacity: .5;
+			    	transform: translate(0, 0);
+			    	text-shadow: 1px 1px #506b1a, 2px 2px #506b1a, 3px 3px #506b1a, 4px 4px #506b1a, 5px 5px #506b1a, 6px 6px #506b1a, 7px 7px #506b1a, 8px 8px #506b1a, 9px 9px #506b1a, 10px 10px #506b1a, 11px 11px #506b1a, 12px 12px #506b1a, 13px 13px #506b1a, 14px 14px #506b1a, 15px 15px #506b1a, -1px 1px olivedrab, -2px 2px olivedrab, -3px 3px olivedrab, -4px 4px olivedrab, -5px 5px olivedrab, -6px 6px olivedrab, -7px 7px olivedrab, -8px 8px olivedrab, -9px 9px olivedrab, -10px 10px olivedrab, -11px 11px olivedrab, -12px 12px olivedrab, -13px 13px olivedrab, -14px 14px olivedrab, -15px 15px olivedrab, -1px -1px #90aa5a, -2px -2px #90aa5a, -3px -3px #90aa5a, -4px -4px #90aa5a, -5px -5px #90aa5a, -6px -6px #90aa5a, -7px -7px #90aa5a, -8px -8px #90aa5a, -9px -9px #90aa5a, -10px -10px #90aa5a, -11px -11px #90aa5a, -12px -12px #90aa5a, -13px -13px #90aa5a, -14px -14px #90aa5a, -15px -15px #90aa5a, 1px -1px olivedrab, 2px -2px olivedrab, 3px -3px olivedrab, 4px -4px olivedrab, 5px -5px olivedrab, 6px -6px olivedrab, 7px -7px olivedrab, 8px -8px olivedrab, 9px -9px olivedrab, 10px -10px olivedrab, 11px -11px olivedrab, 12px -12px olivedrab, 13px -13px olivedrab, 14px -14px olivedrab, 15px -15px olivedrab, 0 -1px #364712, 0 -2px #364712, 0 -3px #364712, 0 -4px #364712, 0 -5px #364712, 0 -6px #364712, 0 -7px #364712, 0 -8px #364712, 0 -9px #364712, 0 -10px #364712, 0 -11px #364712, 0 -12px #364712, 0 -13px #364712, 0 -14px #364712, 0 -15px #364712, 0 1px #364712, 0 2px #364712, 0 3px #364712, 0 4px #364712, 0 5px #364712, 0 6px #364712, 0 7px #364712, 0 8px #364712, 0 9px #364712, 0 10px #364712, 0 11px #364712, 0 12px #364712, 0 13px #364712, 0 14px #364712, 0 15px #364712, -1px 0 #90aa5a, -2px 0 #90aa5a, -3px 0 #90aa5a, -4px 0 #90aa5a, -5px 0 #90aa5a, -6px 0 #90aa5a, -7px 0 #90aa5a, -8px 0 #90aa5a, -9px 0 #90aa5a, -10px 0 #90aa5a, -11px 0 #90aa5a, -12px 0 #90aa5a, -13px 0 #90aa5a, -14px 0 #90aa5a, -15px 0 #90aa5a, 1px 0 #364712, 2px 0 #364712, 3px 0 #364712, 4px 0 #364712, 5px 0 #364712, 6px 0 #364712, 7px 0 #364712, 8px 0 #364712, 9px 0 #364712, 10px 0 #364712, 11px 0 #364712, 12px 0 #364712, 13px 0 #364712, 14px 0 #364712, 15px 0 #364712;
+			    }
+			    70% {
+			    	opacity: 1;
+			    	transform: translate(0.5em, -0.5em);
+			    	text-shadow: 0 0 rgba(0, 255, 255, 0.7), 
+			    	-0.03em 0.03em rgba(255, 0, 0, 0.6), 
+			    	-0.06em 0.06em rgba(139, 0, 255, 0.5), 
+			    	-0.09em 0.09em rgba(255, 0, 0, 0.4), 
+			    	-0.12em 0.12em rgba(255, 127, 0, 0.3);
+			    	-0.15em 0.15em rgba(255, 255, 0, 0.2);
+			    	-0.18em 0.18em rgba(0, 255, 0, 0.1);
+			    }
+			    80% {
+			    	opacity: .5;
+			    	transform: translate(0, 0);
+			    	text-shadow: 1px 1px #506b1a, 2px 2px #506b1a, 3px 3px #506b1a, 4px 4px #506b1a, 5px 5px #506b1a, 6px 6px #506b1a, 7px 7px #506b1a, 8px 8px #506b1a, 9px 9px #506b1a, 10px 10px #506b1a, 11px 11px #506b1a, 12px 12px #506b1a, 13px 13px #506b1a, 14px 14px #506b1a, 15px 15px #506b1a, -1px 1px olivedrab, -2px 2px olivedrab, -3px 3px olivedrab, -4px 4px olivedrab, -5px 5px olivedrab, -6px 6px olivedrab, -7px 7px olivedrab, -8px 8px olivedrab, -9px 9px olivedrab, -10px 10px olivedrab, -11px 11px olivedrab, -12px 12px olivedrab, -13px 13px olivedrab, -14px 14px olivedrab, -15px 15px olivedrab, -1px -1px #90aa5a, -2px -2px #90aa5a, -3px -3px #90aa5a, -4px -4px #90aa5a, -5px -5px #90aa5a, -6px -6px #90aa5a, -7px -7px #90aa5a, -8px -8px #90aa5a, -9px -9px #90aa5a, -10px -10px #90aa5a, -11px -11px #90aa5a, -12px -12px #90aa5a, -13px -13px #90aa5a, -14px -14px #90aa5a, -15px -15px #90aa5a, 1px -1px olivedrab, 2px -2px olivedrab, 3px -3px olivedrab, 4px -4px olivedrab, 5px -5px olivedrab, 6px -6px olivedrab, 7px -7px olivedrab, 8px -8px olivedrab, 9px -9px olivedrab, 10px -10px olivedrab, 11px -11px olivedrab, 12px -12px olivedrab, 13px -13px olivedrab, 14px -14px olivedrab, 15px -15px olivedrab, 0 -1px #364712, 0 -2px #364712, 0 -3px #364712, 0 -4px #364712, 0 -5px #364712, 0 -6px #364712, 0 -7px #364712, 0 -8px #364712, 0 -9px #364712, 0 -10px #364712, 0 -11px #364712, 0 -12px #364712, 0 -13px #364712, 0 -14px #364712, 0 -15px #364712, 0 1px #364712, 0 2px #364712, 0 3px #364712, 0 4px #364712, 0 5px #364712, 0 6px #364712, 0 7px #364712, 0 8px #364712, 0 9px #364712, 0 10px #364712, 0 11px #364712, 0 12px #364712, 0 13px #364712, 0 14px #364712, 0 15px #364712, -1px 0 #90aa5a, -2px 0 #90aa5a, -3px 0 #90aa5a, -4px 0 #90aa5a, -5px 0 #90aa5a, -6px 0 #90aa5a, -7px 0 #90aa5a, -8px 0 #90aa5a, -9px 0 #90aa5a, -10px 0 #90aa5a, -11px 0 #90aa5a, -12px 0 #90aa5a, -13px 0 #90aa5a, -14px 0 #90aa5a, -15px 0 #90aa5a, 1px 0 #364712, 2px 0 #364712, 3px 0 #364712, 4px 0 #364712, 5px 0 #364712, 6px 0 #364712, 7px 0 #364712, 8px 0 #364712, 9px 0 #364712, 10px 0 #364712, 11px 0 #364712, 12px 0 #364712, 13px 0 #364712, 14px 0 #364712, 15px 0 #364712;
+			    }
+			    90% {
+			    	opacity: 1;
+			    	transform: translate(-0.5em, -0.5em);
+			    	text-shadow: 0 0 rgba(0, 255, 0, 0.7), 
+			    	0.03em 0.03em rgba(0, 255, 255, 0.6), 
+			    	0.06em 0.06em rgba(255, 0, 0, 0.5), 
+			    	0.09em 0.09em rgba(139, 0, 255, 0.4), 
+			    	0.12em 0.12em rgba(255, 0, 0, 0.3);
+			    	0.15em 0.15em rgba(255, 127, 0, 0.2);
+			    	0.18em 0.18em rgba(255, 255, 0, 0.1);
+			    }
+			    100% {
+			    	opacity: 0;
+			    	transform: translate(0,0);
+			    	text-shadow: none;
+			    }
+			}
+		</style>
+	</head>
+	<body>
+		<h1 id="num">180000</h1>
+		<script type="text/javascript">
+			(() => {
+				function InitParam(obj){
+					let that = this;
+					this.obj = obj || {};
+					this.boxId = document.getElementById(this.obj.boxId || 'num');
+					this.endNum = this.obj.endNum || parseInt(this.boxId.innerHTML);
+					this.startNum = this.obj.startNum || this.endNum - 1000;
+					this.countRange = this.obj.countRange || 1000;
+					this.numRange = this.obj.numRange || 8;
+					this.delayTime = this.obj.delayTime || 50;
+					this.itmer = this.obj.itmer || null;
+					
+					this.changeNum = function(){
+						if(that.startNum <= that.endNum){
+							that.boxId.innerHTML = that.startNum;
+							that.startNum = that.startNum + that.numRange;
+							
+							that.itmer = setTimeout(arguments.callee,that.delayTime);
+						}else{
+							clearTimeout(that.itmer); 
+						}
+					}
+				}
+				window.init = function(obj){
+					return new InitParam(obj);
+				}
+			})()
+			
+			init({
+				boxId : 'num',
+				startNum : 12572,
+				numRange : 11,
+				delayTime : 100,
+			}).changeNum();
+		</script>
+	</body>
+</html>
