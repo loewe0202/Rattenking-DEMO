@@ -130,7 +130,7 @@
 		            </div>
 		            <div class="module-list-name">图片显示区域：</div>
 		            <div class="module-file-box">
-		            	<img id="showImg" onclick="colorPicker(0,{showImg:'showImg',area16:'area-16',areaRgba:'area-rgba',areaObj:'area-obj'})" src="img/tu.png"/>
+		            	<img id="showImg" onclick="colorPicker(0,{showImg:'showImg',area16:'area-16',areaRgba:'area-rgba',check16:'check16',checkRgb:'checkRgb',checkAlike:'checkAlike',checkRange:'checkRange'})" src="img/tu.png"/>
 		            </div>
 				</div>
 	            <div class="module-check-box">
@@ -143,14 +143,14 @@
 		            </div>
 		            <div class="module-list-name">
 		            	<label class="module-check">
-			            	<input type="checkbox" id="check16" checked="checked"> 
+			            	<input type="checkbox" id="check16" onclick="check({area16:'area-16p',areaRgba:'area-rgbap',check16:'check16',checkRgb:'checkRgb'})" checked="checked"> 
 			            	<span></span>
 			            	是否十六进制显示
 			            </label>
 		            </div>
 		            <div class="module-list-name">
 		            	<label class="module-check">
-			            	<input type="checkbox" id="checkRgb" checked="checked"> 
+			            	<input type="checkbox" id="checkRgb" onclick="check({area16:'area-16p',areaRgba:'area-rgbap',check16:'check16',checkRgb:'checkRgb'})" checked="checked"> 
 			            	<span></span>
 			            	是否RGB显示
 			            </label>
@@ -159,20 +159,20 @@
 		            	<label class="module-check">
 			            	<input type="checkbox" id="checkAlike"> 
 			            	<span></span>
-			            	是否去掉相同颜色(此项由于较大，打印在控制台！)
+			            	显示相同颜色(此项由于较大，打印在控制台！)
 			            </label>
 		            </div>
 	            </div>
 			</div>
 			<div>
-				<button class="show-all-color" onclick="colorPicker(1,{showImg:'showImg',area16:'area-16',areaRgba:'area-rgba',areaObj:'area-obj',checkAlike:'checkAlike',checkRange:'checkRange'})">显示所有颜色</button>
+				<button class="show-all-color" onclick="colorPicker(1,{showImg:'showImg',area16:'area-16',areaRgba:'area-rgba',check16:'check16',checkRgb:'checkRgb',checkAlike:'checkAlike',checkRange:'checkRange'})">显示所有颜色</button>
 			</div>
             <div class="module-show-area">
-            	<section>
+            	<section id="area-16p">
             		<div class="module-list-name">十六进制显示区域：</div>
             		<div id="area-16"></div>
             	</section>
-            	<section>
+            	<section id="area-rgbap">
             		<div class="module-list-name">RBGA显示区域：</div>
             		<div id="area-rgba"></div>
             	</section>
@@ -226,6 +226,7 @@
                         alert("很遗憾，您浏览器版本太老了，无法使用我们的小工具 ！");
                         return;
                     }
+                    
                     let ctx = canvas.getContext("2d");
                     let str = "",str1 = "";
                     let img = $(obj.showImg);
@@ -246,6 +247,9 @@
 	                        str1 = '<p><span style="background:'+ color16 +'"></span>'+ imgData.data.slice(0,3) +'</p>';
 	                        str = '<p><span style="background:'+ color16 +'"></span>'+ color16 +'</p>';
                         }else if(param === 1){
+                        	if (!confirm("显示所有颜色会比较慢，您是否要继续进行该操作？")) {
+		                        return;
+		                    }
                         	let flag = false;
 	                        let indexRange;
 	                        let jsonObj = {};
@@ -320,6 +324,19 @@
 		                }
 	                }
 					canvas(obj,size,param);
+				}
+				window.check = function(obj){
+					console.log($(obj.check16).checked);
+					if($(obj.check16).checked){
+	                	$(obj.area16).style.display = 'block';
+	                }else{
+	                	$(obj.area16).style.display = 'none';
+	                }
+	                if($(obj.checkRgb).checked){
+	                	$(obj.areaRgba).style.display = 'block';
+	                }else{
+	                	$(obj.areaRgba).style.display = 'none';
+	                }
 				}
 			})()
 		</script>
