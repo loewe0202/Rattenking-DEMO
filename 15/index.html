@@ -88,7 +88,7 @@
 			window.ontouchstart = function (e) { e.preventDefault(); };
 			
 			$('#showImg').longPress(function(){
-				getUrl(this,'img-url');
+				getUrl(document.getElementById('showImg'),'img-url');
 				alert(1111111);
 			});
 			function getUrl(e,param){
