@@ -89,7 +89,10 @@
 			window.ontouchstart = function (e) { e.preventDefault(); };
 			
 			$('#showImg').longPress(function(){
-				let str = '<div style="position:absolute;top:110px;left:50px;z-index:10;background:#000;"><p onclick="getUrl(document.getElementById(\'showImg\'),\'img-url\');">识别二维码</p></div>'
+				let str = '<div style="position:absolute;top:110px;left:50px;z-index:10;background:#000;color:#fff;font-size:16px;text-algin:center;line-height:30px;width:200px;border-radius:5px;">'+
+				'<p onclick="getUrl(document.getElementById(\'showImg\'),\'img-url\');">识别二维码</p>'+
+				'<p onclick="analyticCode.getUrl(document.getElementById(\'showImg\'),\'img-url\',function(url){alert(url);};">弹出地址</p>'+
+				'</div>';
 				$('#analytic').append(str);
 			});
 			function getUrl(e,param){
