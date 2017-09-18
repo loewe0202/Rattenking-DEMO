@@ -12,6 +12,7 @@
 				width: 100%;
 				color: #000;
 				margin: 0 auto;
+				padding-left: 10px;
 			}
 			.module-head{
 				text-align: center;
@@ -51,7 +52,7 @@
 		<div class="module-content">
 			<!--解析二维码-->
 			<h1 class="module-head">解析二维码</h1>
-			<div class="box">
+			<div class="box" id="analytic" style="position: relative;">
 				<h3>长按二维码解析</h3>
 				<img id="showImg" src="tyfo.png"/>
 				<p class="url-box" id="urlBox"></p>
@@ -88,8 +89,8 @@
 			window.ontouchstart = function (e) { e.preventDefault(); };
 			
 			$('#showImg').longPress(function(){
-				
-				alert(this.src);
+				let str = '<div style="position:absolute;top:110px;left:50px;z-index:10;background:#000;"><p onclick="getUrl(document.getElementById(\'showImg\'),\'img-url\');">识别二维码</p></div>'
+				$('#analytic').append(str);
 			});
 			function getUrl(e,param){
 				analyticCode.getUrl(param,e,function(url1,url2){
