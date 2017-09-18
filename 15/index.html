@@ -72,26 +72,43 @@
 		<script type="text/javascript">
 			//扩展移动端长按事件
 			$.fn.longPress = function (fn) {
-			　　var timeout = undefined;
-			　　var $this = this;
-			　　for (var i = 0; i < $this.length; i++) {
+			　　let timer = null;
+			　　let $this = this;
+			　　for (let i = 0; i < $this.length; i++) {
 				
 				　　$this[i].addEventListener('touchstart', function (event) {
-				　　		timeout = setTimeout(fn, 800);
+				　　		timer = setTimeout(fn, 1000);
 				　　}, false);
 				
 				　　$this[i].addEventListener('touchend', function (event) {
-				　　		clearTimeout(timeout);
+				　　		clearTimeout(timer);
 				　　}, false);
 			　　}
 			}
 			//阻止触发默认事件
 			window.ontouchstart = function (e) { e.preventDefault(); };
 			
+			function alertChange(param){
+				if(param === 1){
+					getUrl(document.getElementById('showImg'),'img-url');
+				}else if(param === 2){
+					analyticCode.getUrl('img-url',document.getElementById('showImg'),function(url){alert(url);});
+				}else if(param === 3){
+					analyticCode.getUrl('img-url',document.getElementById('showImg'),function(url){window.location.href = url;});
+				}else if(param === 4){
+					analyticCode.getUrl('img-url',document.getElementById('showImg'),function(url){window.open(url);});
+				}else{
+					return;
+				}
+				$('#addDiv').remove();
+			}
+			
 			$('#showImg').longPress(function(){
-				let str = '<div style="position:absolute;top:110px;left:50px;z-index:10;background:#000;color:#fff;font-size:16px;text-algin:center;line-height:30px;width:200px;border-radius:5px;">'+
-				'<p onclick="getUrl(document.getElementById(\'showImg\'),\'img-url\');">识别二维码</p>'+
-				'<p onclick="analyticCode.getUrl(document.getElementById(\'showImg\'),\'img-url\',function(url){alert(url);};">弹出地址</p>'+
+				let str = '<div id="addDiv" style="position:absolute;top:110px;left:50px;z-index:10;background:#000;color:#fff;font-size:16px;text-align:center;width:180px;border-radius:5px;">'+
+				'<p style="border-bottom:1px solid #fff;margin:0;height:50px;line-height:50px;" onclick="alertChange(1)">识别二维码</p>'+
+				'<p style="border-bottom:1px solid #fff;margin:0;height:50px;line-height:50px;" onclick="alertChange(2)">弹出地址</p>'+
+				'<p style="border-bottom:1px solid #fff;margin:0;height:50px;line-height:50px;" onclick="alertChange(3)">当前窗口打开地址</p>'+
+				'<p onclick="alertChange(4)">新窗口打开地址</p>'+
 				'</div>';
 				$('#analytic').append(str);
 			});
