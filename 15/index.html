@@ -87,7 +87,7 @@
 			　　}
 			}
 			//阻止触发默认事件
-			window.ontouchstart = function (e) { e.preventDefault(); };
+			document.getElementById('showImg').ontouchstart = function (e) { e.preventDefault(); };
 			
 			function alertChange(param){
 				if(param === 1){
