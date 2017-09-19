@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>生成二维码</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			body{margin: 0;}
+			.module-content{
+				min-width: 320px;
+				max-width: 1000px;
+				width: 100%;
+				color: #000;
+				margin: 0 auto;
+				padding-left: 10px;
+				box-sizing: border-box;
+			}
+			.module-head{
+				text-align: center;
+				font-weight: 500;
+				margin: 0;
+				font-size: 30px;
+				height: 100px;
+				line-height: 100px;
+				color: #000;
+			}
+			.box h3{
+				font-weight: 300;
+				margin: 0;
+				font-size: 20px;
+				height: 60px;
+				line-height: 60px;
+				color: #000;
+			}
+			#text{
+				outline: none;
+				width: 200px;
+				height: 30px;
+				line-height: 30px;
+				font-size: 14px;
+				padding-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="module-content">
+			<!--生成二维码-->
+			<h1 class="module-head">生成二维码</h1>
+			<div class="box">
+				<h3>填写生成二维码的内容</h3>
+				<input id="text" type="text" value="http://m.tyfo.com"/>
+			</div>
+			<div class="box">
+				<h3>生成的二维码</h3>
+				<div id="qrcode"></div>
+			</div>
+		</div>
+		<script src="QRCode.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function(){
+				let elText = document.getElementById("text");
+				let qrcode = new QRCode(document.getElementById("qrcode"), {
+					width : 120,
+					height : 120
+				});
+				function makeCode(){
+					if (!elText.value) {
+						elText.onfocus();
+						return;
+					}
+					qrcode.makeCode(elText.value);
+				}
+				makeCode();
+				elText.addEventListener('blur',function(){
+					makeCode();
+				},false);
+				elText.addEventListener('keydown',function(e){
+					if(e.keyCode === 13)makeCode();
+				},false);
+			}())
+		</script>
+	</body>
+</html>
