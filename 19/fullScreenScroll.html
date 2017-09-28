@@ -152,11 +152,13 @@
 				    
 				    //绑定touchstart事件
 				    bd.addEventListener('touchstart',(e) => {
+				    	//startY = getPageY(e);
 				    	startY = getTouchPageY(e);
 				    },{ passive: false });
 				    
 				    //绑定touchmove事件
 				    bd.addEventListener('touchmove',(e) => {
+				    	//endY = getPageY(e);
 				    	endY = getTouchPageY(e);
 				    },{ passive: false });
 				    
