@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#hd{
+				width: 30px;
+				position:fixed;
+				top: calc(50% - 90px);
+				right: 0;
+				z-index: 10;
+			}
+			#hd li{
+				width:30px;
+				height: 30px;
+				position:relative;
+			}
+			#hd li:after{
+				display: block;
+				content: '';
+				width:11px;
+				height: 11px;
+				position:absolute;
+				top:10px;
+				left:10px;
+				background: url(checked.png) no-repeat;
+			}
+			#hd li.active:after{
+				background: url(checked.png) no-repeat;
+				background-position: 0 -11px;
+			}
+			#bd{
+				position:fixed;
+				width: 100%;
+				height: 100%;
+			}
+			#bd li{
+				width:100%;
+				height: 100%;
+				opacity: 0;
+				position:absolute;
+				top:0;
+				left:0;
+				z-index: 10;
+				transition: all 1s;
+			}
+			#bd li.active{
+				opacity: 1;
+				z-index: 100;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="hd">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<ul id="bd">
+			<li class="active" style="background: url(1.jpg) no-repeat center center;background-size: cover;"></li>
+			<li style="background: url(2.jpg) no-repeat center center;background-size: cover;"></li>
+			<li style="background: url(3.jpg) no-repeat center center;background-size: cover;"></li>
+			<li style="background: url(4.jpg) no-repeat center center;background-size: cover;"></li>
+			<li style="background: url(5.jpg) no-repeat center center;background-size: cover;"></li>
+			<li style="background: url(6.jpg) no-repeat center center;background-size: cover;"></li>
+		</ul>
+		<script type="text/javascript">
+			(()=>{
+				//定义全局变量
+				let index = 0,len = 0,startY = 0 ,endY = 0,hd = null,bd = null,hdList = null,bdList = null,activeHd = null,activeBd = null;
+				//切换class
+				const changeClass = (elem,param,active) => {
+					Array.prototype.forEach.call(elem,(current,index) => {
+						index === param ? current.classList.add(active) : current.classList.remove(active);
+					});
+				}
+				
+				//执行动画函数
+				const animationFn = (param) => {
+					changeClass(hdList,param,activeHd);
+					changeClass(bdList,param,activeBd);
+				}
+				
+				//判断是前一个还是后一个
+				const decidePrevOrNext = (flag) => {
+					flag ? (index = index < len - 1 ? index + 1 : len - 1) : (index = index > 0 ? index - 1 : 0 );
+					animationFn(index);
+	            	setTimeout(() => {
+	            		window.onmousewheel = document.onmousewheel = scrollFn;
+	            	},100);
+				}
+				
+				//获取移动端Y坐标
+				const getTouchPageY = (e) => {
+					e = e || window.event;
+			    	e.preventDefault();
+			    	return e.targetTouches[0].pageY;
+				}
+				
+				//滚轮执行函数
+				const scrollFn = (e) =>  {  
+			        e = e || window.event; 
+			        
+			        //解绑鼠标滚轮事件
+			        if(document.removeEventListener){
+			        	document.removeEventListener('DOMMouseScroll', scrollFn, false); 
+			        }
+			        window.onmousewheel = document.onmousewheel = null;
+			        
+			        //判断鼠标滚轮的方向并执行动画
+			        e.wheelDelta > 0 || e.detail > 0 ? decidePrevOrNext(false) : decidePrevOrNext(true)
+			    }  
+			    
+			    const fullFadeIn = window.fullFadeIn = (obj) => {
+			    	let _obj = obj || {};
+			    	
+			    	elemHd = _obj.elemHd || 'hd';
+			    	elemBd = _obj.elemBd || 'bd';
+			    	activeHd = _obj.activeHd || 'active';
+			    	activeBd = _obj.activeBd || 'active';
+			    	
+					hd = document.getElementById(elemHd);
+					bd = document.getElementById(elemBd);
+					hdList = hd.getElementsByTagName('li');
+					bdList = bd.getElementsByTagName('li');
+					len = hdList.length;
+					
+					//给页面绑定滑轮滚动事件  
+				    if (document.addEventListener) {//firefox  
+				        document.addEventListener('DOMMouseScroll', scrollFn, false);  
+				    }
+				    
+				    //滚动滑轮触发scrollFunc方法  //ie 谷歌
+				    window.onmousewheel = document.onmousewheel = scrollFn;
+				    
+				    //添加点击事件
+				    Array.prototype.forEach.call(hdList,(current,index) => {
+				    	current.addEventListener('click',() => {
+				    		animationFn(index);
+				    	},false);
+				    });
+				    
+				    //绑定touchstart事件
+				    bd.addEventListener('touchstart',(e) => {
+				    	startY = getPageY(e);
+				    },{ passive: false });
+				    
+				    //绑定touchmove事件
+				    bd.addEventListener('touchmove',(e) => {
+				    	endY = getPageY(e);
+				    },{ passive: false });
+				    
+				    //绑定touchend事件
+				    bd.addEventListener('touchend',(e) => {
+				    	let Y = endY - startY;
+				    	Y > 0 ? decidePrevOrNext(false) : decidePrevOrNext(true);
+				    },{ passive: false });
+			    }
+			})()
+			fullFadeIn({
+				elemHd : 'hd',       //右侧侧边栏窗口
+				elemBd : 'bd',       //全屏窗口
+				activeHd : 'active', //右侧class切换的class名
+				activeBd : 'active'  //全屏切换的class名
+			});
+		</script>
+	</body>
+</html>
