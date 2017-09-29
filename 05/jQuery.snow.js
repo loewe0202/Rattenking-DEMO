@@ -3,14 +3,14 @@
 }(window,function(window){
     var snow = window.snow = function(options){
         var defaults      = {
-                                mainCell       : 'body',                                               //雪花出现的窗口
-                                windowHeight 	: $(window).height(),                                    //雪花出现的窗口高度
-                                windowWidth	: $(window).width(),                                     //雪花出现的窗口宽度
-                                minSize		: 10,		                                             //雪花的最小尺寸
-                                maxSize		: 20,		                                             //雪花的最大尺寸
-                                newOn		    : 1000,		                                             //雪花出现的频率
-                                snowArr        : ['&#10052;','&#10053;','&#10054;'],               //雪花的种类
-                                flakeColor	    : "#FFFFFF"                                            //雪花的颜色
+                                mainCell       : 'body',                                               
+                                windowHeight 	: $(window).height(),                                    
+                                windowWidth	: $(window).width(),                                     
+                                minSize		: 10,		                                             
+                                maxSize		: 20,		                                             
+                                newOn		    : 1000,		                                             
+                                snowArr        : ['&#10052;','&#10053;','&#10054;'],               
+                                flakeColor	    : "#FFFFFF"                                         
                             },
         options			    = $.extend({}, defaults, options),
         snowAnimate         = function(){

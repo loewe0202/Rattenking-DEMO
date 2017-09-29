@@ -29,6 +29,10 @@
 		});
 	}
 	
+	function clickActive(_index,newOptions){
+    	$('html,body').animate({'scrollTop' : data[_index].$scrollTop},newOptions.delayTime);
+    }
+	
 	var scroll_floor = window.scrollFloor = function(options){
 		var newOptions = $.extend({}, defaults, options);
 		var floorList = $body.find(newOptions.floorClass),navList = $body.find(newOptions.navClass);
@@ -37,11 +41,9 @@
 		scrollActive(navList,newOptions);
 		
         $(window).bind('scroll',function(){scrollActive(navList,newOptions);});
-        
         navList.bind('click',function(){
         	var _index = $body.find(this).index();
-        	$('html,body').animate({'scrollTop' : data[_index].$scrollTop},newOptions.delayTime);
+        	clickActive(_index,newOptions);
         });
-		
 	}
 })(window);

@@ -97,6 +97,10 @@
 				width: 200px;
 				font-size: 16px;
 			}
+			#showImg{
+				cursor: default;
+				cursor: url('img/10.jpg');
+			}
 			.module-show-area section p span{
 				display: inline-block;
 				width: 16px;
@@ -322,6 +326,7 @@
 		                    size.x = touch.clientX - offset.left;
 		                    size.y = touch.clientY - offset.top;
 		                }
+		                console.log(size);
 	                }
 					canvas(obj,size,param);
 				}
