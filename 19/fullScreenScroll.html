@@ -117,6 +117,8 @@
 			        }
 			        window.onmousewheel = document.onmousewheel = null;
 			        
+			        //console.log(e.wheelDelta);
+			        //console.log(e.detail);
 			        //判断鼠标滚轮的方向并执行动画
 			        e.wheelDelta > 0 || e.detail > 0 ? decidePrevOrNext(false) : decidePrevOrNext(true)
 			    }  
@@ -144,21 +146,20 @@
 				    window.onmousewheel = document.onmousewheel = scrollFn;
 				    
 				    //添加点击事件
-				    Array.prototype.forEach.call(hdList,(current,index) => {
+				    Array.prototype.forEach.call(hdList,(current,_index) => {
 				    	current.addEventListener('click',() => {
+				    		index = _index;
 				    		animationFn(index);
 				    	},false);
 				    });
 				    
 				    //绑定touchstart事件
 				    bd.addEventListener('touchstart',(e) => {
-				    	//startY = getPageY(e);
 				    	startY = getTouchPageY(e);
 				    },{ passive: false });
 				    
 				    //绑定touchmove事件
 				    bd.addEventListener('touchmove',(e) => {
-				    	//endY = getPageY(e);
 				    	endY = getTouchPageY(e);
 				    },{ passive: false });
 				    
