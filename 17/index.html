@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>PDF生成工具</title>
+		<script src="html2canvas.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jspdf.debug.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="render_me" onclick="downloadSG()" style="background: blue;width: 1000px;height: 1000px;margin: 0 auto;">
+			
+		</div>
+		<script type="text/javascript">
+			function downloadSG(){  
+			    html2canvas(document.getElementById('render_me'), {  
+//			        height:970, 
+//			        width:970,
+			        onrendered: function(canvas) {           
+			            var imgData = canvas.toDataURL('img/notice/png');  
+			            var doc = new jsPDF('p','px','a4');  
+			            
+			            doc.setFont("times");
+						doc.setFontType("italic");
+						doc.text(20, 40, 'ABCDEFG！');
+			            doc.addImage(imgData, 'PNG', 15, 15,1000,1000);  
+			            doc.addPage();  
+			            doc.addImage(imgData, 'PNG', 15, 15,1000,1000);  
+			            doc.save(new Date().getTime() + '.pdf');  
+			        },  
+			        background:'#fff'
+			    });  
+			} 
+		</script>
+	</body>
+</html>
