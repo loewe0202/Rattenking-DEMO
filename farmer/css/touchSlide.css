@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
+}
+body {
+    margin: 0;
+    line-height: 1;
+
+    font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+}
+/*轮播代码*/
+#banner,#banner0,#banner1{position: relative;   background: #fff;}
+#banner .hd,#banner0 .hd,#banner1 .hd{position: absolute;bottom: 1rem;right: 0;text-align: center; z-index: 990;width: 100%; }
+#banner .hd li,#banner0 .hd li,#banner1 .hd li{
+    display: inline-block;
+    font-size: 0;
+    width: 1rem;
+    height:  1rem;
+    background:url(../img/check.png) no-repeat center center/0.8rem 0.8rem;
+    margin-right: .3rem;
+}
+#banner .bd,#banner0 .bd,#banner1 .bd{font-size: 0;white-space: nowrap;overflow: hidden;}
+#banner .bd li,#banner0 .bd li,#banner1 .bd li{display: inline-block;}
+#banner .hd li.on,#banner0 .hd li.on,#banner1 .hd li.on{
+    background: url(../img/checked.png) no-repeat center center/0.8rem 0.8rem;
+}

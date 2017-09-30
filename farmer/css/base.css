@@ -1,0 +1,41 @@
+/*分类*/
+.classify-box{
+    display: table;
+    table-layout: fixed;
+    background: #ffffff;
+}
+.classify-box a{
+    display: table-cell;
+    width: 25%;
+    padding:  2rem 0;
+}
+.products-list-title{
+    position: relative;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    color: #242424;
+    padding-left:4.2rem;
+    background: #ffffff;
+}
+.products-list-box{
+    margin-top: 1rem;
+}
+.logo1-img{
+    position: absolute;
+     left: 0px;
+    top:1rem;
+    width: 4.2rem;
+    height: 2rem;
+
+}.products-list-box ul li{
+    width: 47%;
+    margin-left: 2%;
+    float: left;
+    margin-top: 1rem;
+    background: #ffffff;
+ }
+ .products-list-box-p1{
+     color: #353535;
+     font-size: 1.1rem;
+ }

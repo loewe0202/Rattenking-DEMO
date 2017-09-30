@@ -1,0 +1,229 @@
+/*分类*/
+.classify-box{
+    display: table;
+    table-layout: fixed;
+    background: #ffffff;
+}
+.classify-box a{
+    display: table-cell;
+    width: 25%;
+    padding:  2rem 0;
+}
+.products-list-title{
+    position: relative;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.5rem;
+    color: #242424;
+    padding-left:4rem;
+    background: #ffffff;
+}
+.products-list-box{
+    margin-top: 1rem;
+}
+.logo1-img{
+    position: absolute;
+    left: 0px;
+    top:1.25rem;
+    width: 4rem;
+    height: 1.6rem;
+
+}
+.logo2-img{
+    position: absolute;
+    left: 0px;
+    top:1.1rem;
+    width: 4rem;
+    height: 2rem;
+
+}
+.products-list-box ul li{
+     width: 47%;
+     margin-left: 2%;
+     float: left;
+     margin-top: 1rem;
+     background: #ffffff;
+    padding-bottom: 1rem;
+ }
+.products-list-box-p1{
+    color: #353535;
+    font-size: 1.2rem;
+    width: 92%;
+    margin: 0 auto;
+    height: 3rem;
+    line-height: 1.5rem;
+    overflow: hidden;
+}
+.products-list-box-p2{
+    width: 92%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+.products-list-box-p3{
+  font-size: 1.2rem;
+    color: #d9241c;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+}
+.products-list-box-p4{
+    font-size: 1.1rem;
+    color: #ffffff;
+    height: 2.2rem;
+    line-height: 2.2rem;
+    text-align: center;
+    width: 6.5rem;
+    border-radius: 1.2rem;
+    background:#d9241c;
+}
+
+/*健康*/
+.choose-box{
+    margin-top: 1rem;
+    background: #ffffff;
+    padding: 1rem 4%;
+}
+.choose-box .choose-box-list{
+    width: 48%;
+}
+.guangao-position{
+    margin-top: 1rem;
+
+}
+.more-goods-box{
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    font-size: 0;
+    padding: .5rem;
+}
+.more-goods-box li {
+    display: inline-block;
+    min-height: 4rem;
+    text-align: center;
+    vertical-align: top;
+    white-space: normal;
+    margin-right: .5rem;
+    background: #ffffff;
+}
+.more-goods-box li a {
+    display: block;
+    width: 10rem;
+    height: 11rem;
+    overflow: hidden;
+    padding: .75rem .5rem .5rem;
+    position: relative;
+}
+.more-goods-box li .health-xcp-img{
+    margin-top: 1rem;
+}
+.more-goods-box-p1{
+    color: #353535;
+    font-size: 1.3rem;
+    height: 2rem;
+    line-height: 2rem;
+    overflow: hidden;
+    font-weight: bold;
+}
+.more-goods-box-p2{
+    font-size: 1.1rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
+    overflow: hidden;
+    color: #353535;
+}
+.recommendation-list  li{
+    width: 47%;
+    margin-top: 1rem;
+    margin-left: 2%;
+    float: left;
+    background: #ffffff;
+    padding-bottom: 1rem;
+}
+.recommendation-list-p1{
+    font-size: 1.2rem;
+    color: #353535;
+    height: 3rem;
+    line-height: 1.5rem;
+    overflow: hidden;
+    width: 92%;
+    margin: 0 auto;
+}
+.medicalService-box .products-list-box-p1{
+  margin-top: 1rem;
+}
+
+.medicalService-box-p1{
+    font-size: 1.1rem;
+    color: #d9241c;
+     height: 2.4rem;
+    line-height: 1.2rem;
+    font-weight: bold;
+}
+.medicalService-box-p2{
+    font-size: 1.1rem;
+    color: #ffffff;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    text-align: center;
+    width: 6.5rem;
+    border-radius: 1.4rem;
+    background:#d9241c;
+}
+.medicalService-box-p3 {
+    color: #666666;
+    font-size: 1.1rem;
+    text-decoration: line-through;
+}
+.examination-choose{
+    background: #ffffff;
+    height: 4rem;
+    position: relative;
+    width: 100%;
+}
+.examination-choose a{
+    width: 42.5%;
+    position: relative;
+    text-align: center;
+    color: #353535;
+    font-size: 1.4rem;
+    display: inline-block;
+    margin-left: 5%;
+    height: 3.8rem;
+    line-height: 3.8rem;
+}
+.health-logo1-img{
+    position: absolute;
+    width: 2.5rem;
+    height:1.8rem;
+    top:1.1rem;
+    left: 8%;
+}
+.examination-choose a.on{
+    border-bottom: 0.2rem solid #d9241c;
+}
+.tea-floor{
+    margin-top: 1rem;
+}
+.electrical-xcp-box{
+    position: relative;
+}
+.electrical-xcp-title{
+    position: absolute;
+    bottom: 0rem;
+    left: 0rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.4rem;
+    background: black;
+    opacity: 0.7;
+    z-index: 88;
+    width: 100%;
+   border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+}
+.more-electrical a{
+    padding: 1rem 0.5rem 0.5rem !important;
+}
