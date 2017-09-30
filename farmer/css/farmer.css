@@ -47,7 +47,7 @@ body{background: #fff;}
 }
 .recommend-head:after{
 	display: block;
-	content: '01';
+	content: attr(data-num);
 	background: #d95959;
 	color: #fff;
 	width: 2.6rem;
@@ -62,47 +62,38 @@ body{background: #fff;}
 }
 .recommend-head.head1{background: #67b930;}
 .recommend-head.head1:after{
-	content: '02';
 	background: #599f2a;
 }
 .recommend-head.head2{background: #f5cb75;}
 .recommend-head.head2:after{
-	content: '03';
 	background: #d6b166;
 }
 .recommend-head.head3{background: #fd784d;}
 .recommend-head.head3:after{
-	content: '04';
 	background: #d66642;
 }
 .recommend-head.head4{background: #ec6496;}
 .recommend-head.head4:after{
-	content: '05';
 	background: #d15985;
 }
 .recommend-head.head5{background: #64d2c9;}
 .recommend-head.head5:after{
-	content: '06';
 	background: #5bbcb4;
 }
 .recommend-head.head6{background: #d594f2;}
 .recommend-head.head6:after{
-	content: '07';
 	background: #bb83d4;
 }
 .recommend-head.head7{background: #ef5051;}
 .recommend-head.head7:after{
-	content: '08';
 	background: #d54a4a;
 }
 .recommend-head.head8{background: #66cae2;}
 .recommend-head.head8:after{
-	content: '09';
 	background: #5cb6cc;
 }
 .recommend-head.head9{background: #ffaf5a;}
 .recommend-head.head9:after{
-	content: '10';
 	background: #e69e52;
 }
 
