@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>弹出框制作</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			body{margin: 0;}
+			.tyfo-layer-fixed{
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 100000;
+			}
+			.tyfo-layer-bg{
+				width: 100%;
+				height: 100%;
+				background-color: #000;
+				opacity: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 0;
+			}
+			.tyfo-layer-relative{
+				position: relative;
+				margin: 0 auto;
+				height: 100%;
+			}
+			.tyfo-layer-absolute{
+				position: absolute;
+				width: 150px;
+				text-align: center;
+				height: 60px;
+				line-height: 60px;
+				font-size: 14px;
+				border-radius: 5px;
+				color: #fff;
+				top: calc(50% - 15px);
+				left: calc(50% - 100px);
+				z-index: 10;
+			}
+			.tyfo-layer-absolute:after{
+				content: '';
+				display: block;
+				width: 100%;
+				height: 100%;
+				background: #000;
+				opacity: .7;
+				border-radius: 5px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -1;
+			}
+		</style>
+	</head>
+	<body>
+		<button id="about">点我！！！</button>
+		<div id="layer-box"></div>
+		<script src="../../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="tyfo-layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('#about').click(function(){
+				layer.msg('领取成功！');
+			});
+		</script>
+	</body>
+</html>
