@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="css/touchSlide.css">
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="stylesheet" type="text/css" href="css/farmer.css"/>
-    <script type="text/javascript" src="http://www.tyfo.com/common/js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="http://www.tyfo.com/common/js/TouchSlide.1.1.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="js/TouchSlide.1.1.js"></script>
     <script src="js/jquery.scroll.floor.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
@@ -303,6 +303,7 @@
     	</div>
     </div>
 </div>
+<div style="position: fixed;bottom: 80px;right:10px;width: 50px;height: 50px;background:yellow url(img/top.png) no-repeat center center/100% 100%;border-radius: 25px;" onclick="scrollToAddress(0)"></div>
 </body>
 <script type="text/javascript">
     TouchSlide({slideCell:"#banner",effect:"leftLoop",autoPlay:true,delayTime:800, interTime:2400});
@@ -325,11 +326,13 @@
 	    	
 	        $('.slide-box div.fl').css({'height':box,'line-height':box});
     	}))
-    })
-    var floorList = document.getElementsByClassName('recommend-head');
-    
-    Array.prototype.forEach.call(floorList,function(current){
-    	console.log(current.offsetTop);
+    	let scrollToAddress = window.scrollToAddress = function(param){
+    		$('html,body').animate({'scrollTop' : param},300);
+    	}
+    	let floorList = $('.recommend-head');
+    	$('.nav-list .farmer-li').click(function(){
+    		scrollToAddress(floorList.eq($(this).index()).offset().top - 60);
+    	});
     })
 </script>
 </html>
