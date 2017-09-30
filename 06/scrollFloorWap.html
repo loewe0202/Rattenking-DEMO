@@ -31,27 +31,42 @@
 			.content{
 				margin-top: 50px;
 			}
-			.scroll-floor{width: 100%;height: 1000px;background: green;}
-			.floor1{
-				background: red;
+			.scroll-floor{width: 100%;height: 1000px;background: green;color: #fff;text-align: center;line-height: 1000px;font-size: 50px;}
+			.floor1{background: red;}
+			.floor2{background: yellow;line-height: 500px;}
+			.more{
+				display: inline-block;
+				width: 200px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 20px;
+				background: #eee;
+				color: #555;
+				border-radius: 25px;
 			}
-			.floor2{background: yellow;}
 		</style>
 	</head>
 	<body>
 		<nav class="floor-nav">
-			<span class="scroll-nav active">F1</span>
-			<span class="scroll-nav">F2</span>
-			<span class="scroll-nav">F3</span>
+			<span class="scroll-nav active">商品</span>
+			<span class="scroll-nav">评论</span>
+			<span class="scroll-nav">详情</span>
 		</nav>
 		<div class="content">
-			<section class="scroll-floor floor1"></section>
-			<section class="scroll-floor floor2"></section>
-			<section class="scroll-floor floor3"></section>
+			<section class="scroll-floor floor1">商品区</section>
+			<section class="scroll-floor floor2">
+				评论区
+				<p class="more">查看更多评论</p>
+			</section>
+			<section class="scroll-floor floor3">详情区</section>
 		</div>
 		<script src="../js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="jquery.scroll.floor.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			$('.more').click(function(){
+				$(this).hide();
+				$('.floor2').css('height',2000);
+			});
 			scrollFloor({
 				floorClass : '.scroll-floor',       //楼层盒子class;默认为'.scroll-floor'
 				navClass : '.scroll-nav',           //导航盒子class;默认为'.scroll-nav'
