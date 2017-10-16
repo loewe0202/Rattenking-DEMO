@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-if & v-else & v-show 实例</title>
+    <script type="text/javascript" src="../assets/vue.js"></script>
+</head>
+<body>
+    <h1>v-if & v-else & v-show 实例</h1>
+    <hr>
+    <div id="app">
+        <p v-if="flag" v-text="msg0"></p>
+        <p v-else="flag" v-text="msg1"></p>
+        <p v-if="flag" v-text="msg2"></p>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el : "#app",
+            data : {
+                msg0 : '你好，Rattenking!',
+                msg1 : '请登陆!',
+                msg2 : '是否显示!',
+                flag : true
+            }
+        });
+    </script>
+</body>
+</html>

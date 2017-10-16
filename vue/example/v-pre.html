@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-pre & v-cloak & v-once 实例</title>
+    <script type="text/javascript" src="../assets/vue.js"></script>
+</head>
+<body>
+    <h1>v-pre & v-cloak & v-once 实例</h1>
+    <hr>
+    <div id="app">
+        <div>
+            <h3>v-pre 实例</h3>
+            <p>在模板中跳过vue的编译，直接输出原始值。就是在标签中加入v-pre就不会输出vue中的data值了。</p>
+            <p v-pre>{{msg}}</p>
+        </div>
+        <hr>
+        <div>
+            <h3>v-cloak 实例</h3>
+            <p>在vue渲染完指定的整个DOM后才进行显示。</p>
+            <p v-cloak>{{msg}}</p>
+        </div>
+        <hr>
+        <div>
+            <h3>v-once 实例</h3>
+            <p>在第一次DOM时进行渲染，渲染完成后视为静态内容，跳出以后的渲染过程。</p>
+            <p v-once>{{msg}}</p>
+            <input type="text" v-model="msg">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el : "#app",
+            data : {
+                msg : 'hello vue v-pre!'
+            },
+            methods : {
+
+            }
+        });
+    </script>
+</body>
+</html>

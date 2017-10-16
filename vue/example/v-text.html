@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-text & v-html 实例</title>
+    <script type="text/javascript" src="../assets/vue.js"></script>
+</head>
+<body>
+    <h1>v-text & v-html 实例</h1>
+    <hr>
+    <div id="app">
+        <h3>v-text 实例</h3>
+        <ol>
+            <li v-for="item in htmls" v-text="item"></li>
+        </ol>
+        <hr>
+        <h3>v-html 实例</h3>
+        <ol>
+            <li v-for="item in htmls" v-html="item"></li>
+        </ol>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el : "#app",
+            data : {
+                items : [23,45,56,78,65,34,12,7],
+                htmls : ['<p>23</p>','<p>45</p>','<p>67</p>','<p>76</p>','<p>86</p>']
+            }
+        });
+    </script>
+</body>
+</html>

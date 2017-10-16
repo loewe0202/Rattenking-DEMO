@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-bind 实例</title>
+    <script type="text/javascript" src="../assets/vue.js"></script>
+</head>
+<body>
+    <h1>v-bind 实例</h1>
+    <hr>
+    <div id="app">
+        <p><img :src="imgSrc" alt=""></p>
+        <p :style="classA">绑定style</p>
+        <p :class="className">绑定class</p>
+        <p :style="isOk ? classA : classB" @click="changeColor">绑定三元判断</p>
+    </div>
+    <style>
+        .classA{
+            color:blue;
+            font-size: 60px;
+        }
+    </style>   
+    <script type="text/javascript">
+        var app = new Vue({
+            el : "#app",
+            data : {
+                imgSrc : 'http://images2017.cnblogs.com/blog/965467/201708/965467-20170831091655733-1012910151.png',
+                classA : {
+                    color : 'red',
+                    fontSize : '100px'
+                },
+                classB : {
+                    color : 'blue',
+                    fontSize : '70px'
+                },
+                className : 'classA',
+                isOk : false
+            },
+            methods : {
+                changeColor : function(el){
+                    this.isOk = this.isOk ? false : true;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

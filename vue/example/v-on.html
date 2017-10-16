@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-on 实例</title>
+    <script type="text/javascript" src="../assets/vue.js"></script>
+</head>
+<body>
+    <h1>v-on 实例</h1>
+    <hr>
+    <div id="app">
+        <ol>
+            <li v-on:click="changeColor($event)" v-for="item in items" v-text="item"></li>
+        </ol>
+        <div>
+            <p v-text="count"></p>
+            <button v-on:click="addCount">加一</button>
+            <button v-on:click="reduceCount">减一</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el : "#app",
+            data : {
+                items : [23,45,56,78,65,34,12,7],
+                count : 0
+            },
+            methods : {
+                changeColor : function(el){
+                    Array.prototype.forEach.call(el.target.parentNode.childNodes,function(current){
+                        current.style.color = "#000";
+                    });
+                    el.target.style.color = "red";
+                },
+                addCount : function(){
+                    this.count++;
+                },
+                reduceCount : function(){
+                    this.count--;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

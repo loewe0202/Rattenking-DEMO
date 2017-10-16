@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-model 实例</title>
+    <script type="text/javascript" src="../assets/vue.js"></script>
+</head>
+<body>
+    <h1>v-model 实例</h1>
+    <hr>
+    <div id="app">
+        <div>
+            <p>简单的双向绑定</p>
+            <p v-text="msg"></p>
+            <input type="text" v-model="msg">
+        </div>
+        <hr>
+        <div>
+            <p>.lazy：取代 imput 监听 change 事件。</p>
+            <p v-text="msg1"></p>
+            <input type="text" v-model.lazy="msg1">
+        </div>
+        <hr>
+        <div>
+            <p>.number：输入字符串转为数字。</p>
+            <p v-text="msg2"></p>
+            <input type="text" v-model.number="msg2">
+        </div>
+        <hr>
+        <div>
+            <p>.trim：输入去掉首尾空格。</p>
+            <p v-text="msg3"></p>
+            <input type="text" v-model.trim="msg3">
+        </div>
+        <hr>
+        <div>
+            <p>按钮是否选中</p>
+            <p v-text="checked"></p>
+            <input type="checkbox" id="check" v-model="checked">
+            <label for="check">按钮是否选中</label>
+        </div>
+        <hr>
+        <div>
+            <h3>多选绑定一个数组</h3>
+            <p>
+                <input type="checkbox" id="JSPang" value="JSPang" v-model="web_Names">
+                <label for="JSPang">JSPang</label><br/>
+                <input type="checkbox" id="Panda" value="Panda" v-model="web_Names">
+                <label for="Panda">Panda</label><br/>
+                <input type="checkbox" id="PanPan" value="PanPan" v-model="web_Names">
+                <label for="PanPan">PanPan</label>
+                <p>{{web_Names}}</p>
+            </p>
+        </div>
+        <hr>
+        <div>
+            <h3>单选按钮绑定</h3>
+            <input type="radio" id="one" value="男" v-model="sex">
+            <label for="two">男</label>
+            <input type="radio" id="two" value="女" v-model="sex">
+            <label for="two">女</label>
+            <p>{{sex}}</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el : "#app",
+            data : {
+                msg : 'hello vue v-model!',
+                msg1 : '失去焦点后改变!',
+                msg2 : '将输入的字符串取整!',
+                msg3 : '    去掉字符串首尾空格符    ！ ',
+                checked : true,
+                web_Names : [],
+                sex : '男'
+            }
+        });
+    </script>
+</body>
+</html>
