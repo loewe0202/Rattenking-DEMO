@@ -187,14 +187,24 @@
     <div><img src="images/banner7.jpg"/></div>
     <div><img src="images/banner8.jpg"/></div>
 </div>
-<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script src="js/jquery-min.js"></script>
 <script type="text/javascript" charset="utf-8">
 	$(function() {
 	    var $body = $('body');
-	    
+	    function getScrollTop(){  
+		　　var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;  
+		　　if(document.body){  
+		　　　　bodyScrollTop = document.body.scrollTop;  
+		　　}  
+		　　if(document.documentElement){  
+		　　　　documentScrollTop = document.documentElement.scrollTop;  
+		　　}  
+		　　scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;  
+		　　return scrollTop;  
+		}
 	    var setCoverOpacity = function() {
 	        $body.find('.search-box-cover').css({
-	            opacity: ((($body.scrollTop() / 550) > 0.9) ? 0.9 : ($body.scrollTop() / 550))
+	            opacity: (((getScrollTop() / 550) > 0.9) ? 0.9 : (getScrollTop() / 550))
 	        })
 	    }
 	    setCoverOpacity();
