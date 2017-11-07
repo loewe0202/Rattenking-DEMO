@@ -192,15 +192,11 @@
 <script type="text/javascript" charset="utf-8">
 	$(function() {
 	    var $body = $('body'),flag = true;
-		(function(window) {
-			var theUA = window.navigator.userAgent.toLowerCase();
-			if ((theUA.match(/msie\s\d+/) && theUA.match(/msie\s\d+/)[0]) || (theUA.match(/trident\s?\d+/) && theUA.match(/trident\s?\d+/)[0])) {
-				var ieVersion = theUA.match(/msie\s\d+/)[0].match(/\d+/)[0] || theUA.match(/trident\s?\d+/)[0];
-				if (ieVersion < 9) {
-					flag = false;
-				};
-			}
-		})(window);
+		var theUA = window.navigator.userAgent.toLowerCase();
+		if ((theUA.match(/msie\s\d+/) && theUA.match(/msie\s\d+/)[0]) || (theUA.match(/trident\s?\d+/) && theUA.match(/trident\s?\d+/)[0])){
+			var ieVersion = theUA.match(/msie\s\d+/)[0].match(/\d+/)[0] || theUA.match(/trident\s?\d+/)[0];
+			if (ieVersion < 9) {flag = false;alert('这是IE： ' + ieVersion);};
+		}
 	    function getScrollTop(){  
 		　　var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;  
 		　　if(document.body){  
@@ -214,9 +210,8 @@
 		}
 	    var setCoverOpacity = function() {
 	        flag ? 
-			$body.find('.search-box-cover').css({opacity: (((getScrollTop() / 550) > 0.9) ? 0.9 : (getScrollTop() / 550))}) : 
-			$body.find('.search-box-cover')[0].style.filter = 'Alpha(opacity='+ (((getScrollTop() / 550) > 0.9) ? 0.9 : (getScrollTop() / 550))*100 +')';
-	            
+			$body.find('.search-box-cover')[0].style.opacity = (((getScrollTop() / 550) > 0.9) ? 0.9 : (getScrollTop() / 550)) : 
+			$body.find('.search-box-cover')[0].style.filter = 'Alpha(opacity='+ (((getScrollTop() / 550) > 0.9) ? 0.9 : (getScrollTop() / 550))*100 +')';   
 	    }
 	    setCoverOpacity();
 	    $(window).scroll(function() {
