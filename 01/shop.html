@@ -146,6 +146,7 @@
 			left:0;
 			z-index:0;
 			opacity:0;
+			filter:Alpha(opacity=0);
 		}
 		.module-content{
 		    min-width: 320px;
@@ -190,7 +191,16 @@
 <script src="js/jquery-min.js"></script>
 <script type="text/javascript" charset="utf-8">
 	$(function() {
-	    var $body = $('body');
+	    var $body = $('body'),flag = true;
+		(function(window) {
+			var theUA = window.navigator.userAgent.toLowerCase();
+			if ((theUA.match(/msie\s\d+/) && theUA.match(/msie\s\d+/)[0]) || (theUA.match(/trident\s?\d+/) && theUA.match(/trident\s?\d+/)[0])) {
+				var ieVersion = theUA.match(/msie\s\d+/)[0].match(/\d+/)[0] || theUA.match(/trident\s?\d+/)[0];
+				if (ieVersion < 9) {
+					flag = false;
+				};
+			}
+		})(window);
 	    function getScrollTop(){  
 		　　var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;  
 		　　if(document.body){  
@@ -203,13 +213,14 @@
 		　　return scrollTop;  
 		}
 	    var setCoverOpacity = function() {
-	        $body.find('.search-box-cover').css({
-	            opacity: (((getScrollTop() / 550) > 0.9) ? 0.9 : (getScrollTop() / 550))
-	        })
+	        flag ? 
+			$body.find('.search-box-cover').css({opacity: (((getScrollTop() / 550) > 0.9) ? 0.9 : (getScrollTop() / 550))}) : 
+			$body.find('.search-box-cover')[0].style.filter = 'Alpha(opacity='+ (((getScrollTop() / 550) > 0.9) ? 0.9 : (getScrollTop() / 550))*100 +')';
+	            
 	    }
 	    setCoverOpacity();
 	    $(window).scroll(function() {
-	        setCoverOpacity()
+	        setCoverOpacity();
 	    });
 	});
 </script>
