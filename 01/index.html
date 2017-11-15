@@ -25,7 +25,7 @@
 			max-width: 750px;
 			width: 100%;
 			margin: 0 auto;
-            background: rgba(255, 0, 0, 0);
+            background: rgba(255, 0, 0, 0.91);
 		}
 		.module-layer-bg{
 			width: 100%;
@@ -190,8 +190,20 @@
 		　　scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;  
 		　　return scrollTop;  
 		}
+		function getStyle(element, attr){
+			if(element.currentStyle){
+				return element.currentStyle[attr];
+			}else{
+				return window.getComputedStyle(element,null)[attr];
+			}
+		}
+		var color = getStyle(document.getElementsByClassName('module-layer-content')[0],'backgroundColor');
+		var colorRgb = color.substring(0,color.lastIndexOf(',') + 1);
+		var colorA = color.substring(color.lastIndexOf(',') + 1,color.length - 1);
+		if(colorA < 0.9){colorA = 1;}
+
 	    var setCoverOpacity = function() {
-	        document.getElementsByClassName('module-layer-content')[0].style.background = 'rgba(255,0,0,' + (((getScrollTop() / 550) > 0.9) ? 0.9 : (getScrollTop() / 550)) + ')'
+	        document.getElementsByClassName('module-layer-content')[0].style.background = colorRgb + (((getScrollTop() / 550) > colorA) ? colorA : (getScrollTop() / 550)) + ')';
 	    }
 	    setCoverOpacity();
         window.addEventListener('scroll',setCoverOpacity,false);
