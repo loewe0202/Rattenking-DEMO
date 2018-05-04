@@ -256,7 +256,7 @@ em{font-style: normal;}
         outline: medium;
     }
     .rui-content.page1{
-        background: url(../../images/banner-bg.jpg) no-repeat center top/1920px 100%;
+        background: url(../../images/banner-bg.jpg) no-repeat center top/1920px 939px;
         height:calc(100% - 140px);
     }
     .rui-chatu0{display: none;}
@@ -318,7 +318,7 @@ em{font-style: normal;}
         /* box-sizing: border-box; */
     }
     .rui-content.page1{
-        background: url(../../images/mbanner-bg.jpg) no-repeat center top/100% 100%;
+        background:#000 url(../../images/mbanner-bg.jpg) no-repeat center top/100% auto;
         height: calc(100% - 1.26rem - 1px);
         position: relative;
     }
