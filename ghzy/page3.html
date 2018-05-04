@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="email=no" name="format-detection">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <title>观合中医</title>
+    <script src="./js/base.js"></script>
+    <link rel="stylesheet" href="./css//style.css?v1.0.0">
+    <style>
+        html,body{height: 100%;}
+        .marker-route{
+            width: 40px;
+            height: 50px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            font-size: 20px;
+            background: url('./images/iconmarkgreen.png') no-repeat center center/100% 100%;
+        }
+        .amap-marker-label{
+            background-color: #78b9ac;
+            color: #fff;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            /* position: relative; */
+        }
+        .amap-marker-label::after{
+            content: '';
+            display: block;
+            border-top:10px solid #78b9ac;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            position: absolute;
+            bottom: -10px;
+            left: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="rui-nav-content">
+        <img class="rui-nav-logo" src="./images/logo.jpg" alt="">
+        <div class="rui-nav-box">
+            <div class="rui-nav-li">
+                <a href="./index.html">首页</a>
+            </div>
+            <div class="rui-nav-li">
+                <a href="./page1.html">中医之殇</a>
+            </div>
+            <div class="rui-nav-li">
+                <a href="./page2.html">论道观合</a>
+            </div>
+            <div class="rui-nav-li active">
+                <a href="./page3.html">联系我们</a>
+            </div>
+        </div>
+    </div>
+    <div class="rui-content page4">
+        <div class="rui-head-name page3">门店地址</div>
+        <div class="rui-address-content" id="container">
+            <div class="rui-address-list" id="list">
+                <div class="rui-address-head">门店地址</div>
+                <div class="rui-address-list-box">
+                    <div class="rui-address-li" param="1" onClick="markerFn(1)">
+                        <p>观合中医(春熙店)</p>
+                        <p>东大街188号时代华章2层</p>
+                    </div>
+                    <div class="rui-address-li" param="2" onClick="markerFn(2)">
+                        <p>观合中医(双林店)</p>
+                        <p>科华南路10号4栋1层06号</p>
+                    </div>
+                    <div class="rui-address-li" param="3" onClick="markerFn(3)">
+                        <p>观合中医(南站店)</p>
+                        <p>成都市武侯区长益路11号附6号</p>
+                    </div>
+                </div>
+            </div>
+            <div class="rui-address-list" id="detail" style="display: none">
+                <div class="rui-address-head return" onclick="goAllShop()">返回全部门店</div>
+                <div class="rui-address-list-box" style="overflow: hidden;">
+                    <div class="rui-address-li0" style="font-size: .28rem;font-weight: bold;">
+                        观合中医(春熙店)
+                    </div>
+                    <div class="rui-address-li0">
+                        地址：东大街188号时代华章2层
+                    </div>
+                    <div class="rui-address-li0">
+                        电话：18888888888
+                    </div>
+                    <button class="rui-marker-btn" onclick="goThere(this)">到这去</button>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.6&key=cf74b5d1184bf2cd96c18fd83ce93892"></script>
+        <script src="./js/jquery-1.9.1.min.js"></script>
+        <script>
+            var newAddress = '';
+            var loca = '';
+            var map = new AMap.Map('container', {
+                resizeEnable: true,
+                zoom: 12
+            }); 
+            // 浏览器定位
+            map.plugin('AMap.Geolocation', function() {
+                geolocation = new AMap.Geolocation({
+                    enableHighAccuracy: true,//是否使用高精度定位，默认:true
+                    timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+                    buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+                    zoomToAccuracy: false,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                    buttonPosition:'RB'
+                });
+                map.addControl(geolocation);
+                geolocation.getCurrentPosition();
+                AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+                AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+            });  
+            function onComplete(data){
+                console.log('定位成功！');
+                // console.log(data.formattedAddress)
+                newAddress = data.formattedAddress;
+                loca = data.position.getLng() + ',' + data.position.getLat();
+                // console.log(data.position.getLng())
+                // console.log(data.position.getLat())
+            } 
+            function onError(data){
+                console.log('定位失败！');
+            } 
+            // 标记观合中医院的位置
+            var markers = [{
+                icon: './images/iconmarkgreen.png',
+                title: '观合中医(春熙店)',
+                address: '东大街188号时代华章2层',
+                phone: '18684006660',
+                position: [104.07844899999998, 30.651652]
+            }, {
+                icon: './images/iconmarkred.png',
+                title: '观合中医(双林店)',
+                address: '科华南路10号4栋1层06号',
+                phone: '18684006661',
+                position: [104.07909000000001, 30.6082]
+            }, {
+                icon: './images/iconmarkgreen.png',
+                title: '观合中医(南站店)',
+                address: '成都市武侯区长益路11号附6号',
+                phone: '18888888888',
+                position: [104.030372, 30.624558]
+            }];
+            // 清除地图覆盖物
+            map.clearMap();  
+            // 添加一些分布不均的点到地图上,地图上添加三个点标记，作为参照
+            markers.forEach(function(marker,index) {
+                new AMap.Marker({
+                    map: map,
+                    icon: marker.icon,
+                    position: [marker.position[0], marker.position[1]],
+                    offset: new AMap.Pixel(-12, -36),
+                    content: `<div class="marker-route marker-marker-bus-from">${index + 1}</div>`,
+                    label: {
+                        offset: new AMap.Pixel(-50, -60),
+                        content: marker.title
+                    },
+                    title: marker.title
+                });
+            });
+            // 从列表中选择要去的医院
+            function markerFn(param){
+                if(param){
+                    $('.marker-route').css({'background':'url(./images/iconmarkgreen.png) no-repeat center center/100% 100%'});
+                    $('.marker-route').each(function(i){
+                        if($(this).text() == param){
+                            $(this).css({'background':'url(./images/iconmarkred.png) no-repeat center center/100% 100%'})
+                        }
+                    })
+                    $('#list').hide();
+                    $('#detail').show();
+                    // 更新选择的详情
+                    $('.rui-address-li0').eq(0).html(markers[param - 1].title);
+                    $('.rui-address-li0').eq(1).html('地址：' + markers[param - 1].address);
+                    $('.rui-address-li0').eq(2).html('电话：' + markers[param - 1].phone);
+                    $('.rui-marker-btn').attr({'id': param});
+                }
+            }
+            // 返回医院列表
+            function goAllShop(){
+                $('.marker-route').css({'background':'url(./images/iconmarkgreen.png) no-repeat center center/100% 100%'});
+                $('#list').show();
+                $('#detail').hide();
+            }
+            // 去高德地图选择路线和乘车方式
+            function goThere(e){
+                // console.log(e.id)
+                // console.log(markers[e.id - 1])
+                var width = document.documentElement.clientWidth,url = '';
+                if(width > 750){
+                    url = 'https://www.amap.com/dir?from[adcode]=510107&from[name]=' + newAddress + '&from[id]=B001C95DSR-from&from[poitype]=060101&from[lnglat]=' + loca + '&to[adcode]=510116&to[name]=' + markers[e.id - 1].address + '&to[id]=B001C09IP3-to&to[poitype]=120302&to[lnglat]=' + markers[e.id - 1].position[0] + ',' + markers[e.id - 1].position[1] + '&type=car&policy=1&dateTime=now';
+                }else{
+                    url = 'http://m.amap.com/navigation/carmap/saddr=' + loca + ',' + newAddress + '&daddr=' + markers[e.id - 1].position[0] + ',' + markers[e.id - 1].position[1] + ',' + markers[e.id - 1].address + '&sort=dist';
+                }
+                window.location.href = url;
+            }
+            // 注意必须页面标注点渲染完成才能获取marker-route
+            window.onload = function(){
+                $('.marker-route').click(function(){
+                    $('.marker-route').css({'background':'url(./images/iconmarkgreen.png) no-repeat center center/100% 100%'});
+                    $(this).css({'background':'url(./images/iconmarkred.png) no-repeat center center/100% 100%'});
+                    $('#list').hide();
+                    $('#detail').show();
+                    var param = parseInt($(this).text());
+                    // 更新选择的详情
+                    $('.rui-address-li0').eq(0).html(markers[param - 1].title);
+                    $('.rui-address-li0').eq(1).html('地址：' + markers[param - 1].address);
+                    $('.rui-address-li0').eq(2).html('电话：' + markers[param - 1].phone);
+                    $('.rui-marker-btn').attr({'id': param});
+                })
+            }
+        </script>
+    </div>
+    <div class="rui-footer">
+        <span>客服电话：<em>028-87503295</em></span>
+        <span class="rui-footer-erwei">
+            “观合中医”微信服务号
+            <img src="./images/erweima.jpg" alt="">
+        </span>
+    </div>
+</body>
+</html>

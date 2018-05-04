@@ -1,0 +1,525 @@
+@charset "utf-8";
+body,p{margin: 0;padding: 0;font-family: '微软雅黑';}
+a{text-decoration: none;color:#1a1a1a;}
+em{font-style: normal;}
+@media only screen and (min-width: 750px) {
+    .rui-nav-content{
+        padding: 0 120px;
+        height: 140px;
+        line-height: 140px;
+        box-sizing: border-box;
+        min-width: 1080px;
+        border-bottom:1px solid #ccc;
+        background-color: #fff;
+    }
+    .rui-nav-logo{
+        width: 224px;
+        height: 139px;
+        float: left;
+    }
+    .rui-nav-box{
+        overflow: hidden;
+        height: 140px;
+        padding-left: 100px;
+    }
+    .rui-nav-li{
+        display: inline-block;
+        width: 160px;
+        height: 140px;
+        text-align: center;
+        line-height: 140px;
+        color: #1a1a1a;
+        font-size: 20px;
+        float: left;
+    }
+    .rui-nav-li a{display: inline-block;position: relative;}
+    .rui-nav-li.active a{
+        color: #78b9ac;
+        font-weight: bold;
+    }
+    .rui-nav-li.active a:after{
+        content: '';
+        display: block;
+        height: 6px;
+        border-radius: 3px;
+        width: 100%;
+        background-color: #78b9ac;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .rui-content{
+        padding: 0 120px;
+        box-sizing: border-box;
+        min-width: 1080px;
+        position: relative;
+    }
+    .rui-erwei-box{
+        position: absolute;
+        right: 80px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, .9);
+    }
+    .rui-erweima{
+        width: 2.5rem;
+        height: 2.5rem;
+        display: block;
+    }
+    .rui-erwei-head{
+        width: 4rem;
+        height: 1.36rem;
+        color: #fff;
+        font-size: .26rem;
+        text-align: center;
+        font-weight: bold;
+        background-color: #74b4a2;
+        box-sizing: border-box;
+        padding: .18rem;
+        line-height: .5rem;
+    }
+    .rui-erweima-box{padding: .75rem;}
+    .rui-copy{
+        font-size: 16px;
+        color: #fefefe;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* page1 */
+    .rui-head-name{
+        font-size: 40px;
+        color: #0e0e0e;
+        margin: 120px 0 50px;
+        border-left: 14px solid #78b9ac;
+        padding-left: 30px;
+    }
+    .rui-text{
+        font-size: 16px;
+        color: #5d5d5d;
+        width: 100%;
+        display: inline-block;
+        word-wrap: break-word;
+        margin-right: 120px;
+    }
+    .rui-chatu{
+        width: calc(50% - 60px);
+        display: table;
+        float: right;
+        margin-left: 120px;
+        margin-bottom: 100px;
+    }
+    .rui-text-detail{
+        text-indent: 2em;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+    .rui-author{
+        font-size: 30px;
+        color: #0e0e0e;
+        margin-bottom: 100px;
+        text-align: right;
+    }
+    /* footer */
+    .rui-footer{
+        padding: 0 120px;
+        box-sizing: border-box;
+        min-width: 1080px;
+        background-color: #3d4146;
+        height: 145px;
+        line-height: 145px;
+        color: #fefefe;
+        font-size: 36px;
+    }
+    .rui-footer-erwei{
+        font-weight: bold;
+        font-size: 23px;
+        float: right;
+        vertical-align: middle;
+        height: 145px;
+        line-height: 145px;
+    }
+    .rui-footer-erwei img{
+        width: 100px;
+        height: 100px;
+        vertical-align: middle;
+        margin-left: 20px;
+    }
+    .rui-page2-name{
+        font-weight: bold;
+        font-size: .34rem;
+        color: #fff;
+        width: 4rem;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        text-align: center;
+        background-color: #78b9ac;
+        position: absolute;
+        bottom: 0;
+        left: 120px;
+    }
+    /* page3 */
+    #container{
+        width: 100%;
+        height: 550px;
+        margin-bottom: 50px;
+        position: relative;
+    }
+    .rui-address-list{
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        transform: translateY(-50%);
+        z-index: 10000;
+        background-color: #fff;
+    }
+    .rui-address-head{
+        background-color: #78b9ac;
+        font-size: .26rem;
+        color: #fff;
+        width: 4rem;
+        height: .86rem;
+        line-height: .86rem;
+        padding: 0 .3rem;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+    .rui-address-head.return{
+        background:#78b9ac url('../../images/iconback.png') no-repeat .3rem center/.18rem .3rem;
+        padding-left: .55rem;
+    }
+    .rui-address-list-box{
+        height: 4rem;
+        width: 4rem;
+        padding:0 .3rem .3rem;
+        overflow-y: auto;
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+    .rui-address-li{
+        height: 1rem;
+        border-bottom: 1px solid #e7e7e7;
+        font-size: .22rem;
+        padding: .25rem 0;
+        box-sizing: border-box;
+        padding-left: .5rem;
+        position: relative;
+    }
+    .rui-address-li0{
+        height: .9rem;
+        line-height: .9rem;
+        border-bottom: 1px solid #e7e7e7;
+        font-size: .2rem;
+        overflow: hidden;
+    }
+    .rui-address-li p:first-child{
+        height: .3rem;
+        line-height: .3rem;
+        overflow: hidden;
+    }
+    .rui-address-li p:last-child{
+        color: #989898;
+        font-size: .18rem;
+        height: .2rem;
+        line-height: .2rem;
+        overflow: hidden;
+    }
+    .rui-address-li::before{
+        content: attr(param);
+        display: block;
+        width: .4rem;
+        height: .5rem;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        color: #fff;
+        background: url('../../images/iconmarkgreen.png') no-repeat center center/100% 100%;
+        overflow: hidden;
+        text-align: center;
+        font-size: .2rem;
+        line-height: .4rem;
+    }
+    .rui-marker-btn{
+        margin-top: .2rem;
+        display: block;
+        width: 100%;
+        height: .8rem;
+        line-height: .8rem;
+        background-color: #78b9ac;
+        color: #fff;
+        font-size: .22rem;
+        border: none;
+        outline: medium;
+    }
+    .rui-content.page1{
+        background: url(../../images/banner-bg.jpg) no-repeat center top/1920px 100%;
+        height:calc(100% - 140px);
+    }
+    .rui-chatu0{display: none;}
+    .rui-content.page3{
+        background: url(./images/banner-2.jpg) no-repeat center top;
+        height: 335px;
+        margin-bottom: 50px;
+    }
+    .rui-page2-left{width: calc(50% - 60px);float: left;}
+    .rui-page2-right{overflow: hidden;padding-left: 120px;}
+    .rui-footer span{font-size: 20px;}
+    .rui-footer span em{font-size: 36px;}
+}
+@media only screen and (max-width: 750px) {
+    .rui-nav-logo{
+        height: 1.26rem;
+        float: left;
+        margin-left: .3rem;
+        margin-right: .2rem;
+    }
+    .rui-nav-box{
+        height: 1.26rem;
+        overflow-y: hidden;
+        overflow-x: auto;
+        font-size: 0;
+        white-space: nowrap;
+    }
+    .rui-nav-box::-webkit-scrollbar{height: 0;}
+    .rui-nav-li{
+        display: inline-block;
+        height: 1.26rem;
+        line-height: 1.26rem;
+        font-size: .28rem;
+        color: #989898;
+        padding: 0 .5rem;
+    }
+    .rui-nav-li a{
+        color: #989898;
+        display: inline-block;
+        position: relative;
+    }
+    .rui-nav-li.active a{
+        color: #78b9ac;
+    }
+    .rui-nav-li.active a:after{
+        content: '';
+        display: block;
+        height: .06rem;
+        border-radius: .03rem;
+        width: 100%;
+        background-color: #78b9ac;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .rui-nav-content{
+        border-bottom:1px solid #ccc;
+        background-color: #fff;
+        /* box-sizing: border-box; */
+    }
+    .rui-content.page1{
+        background: url(../../images/mbanner-bg.jpg) no-repeat center top/100% 100%;
+        height: calc(100% - 1.26rem - 1px);
+        position: relative;
+    }
+    .rui-copy{display: none;}
+    .rui-erwei-box{
+        width: 4rem;
+        height: 5.36rem;
+        position: absolute;
+        left: 1.75rem;
+        bottom: 1.46rem;
+        background-color: rgba(255, 255, 255, .9);
+    }
+    .rui-erwei-head{
+        height: 1.36rem;
+        width: 100%;
+        font-size: .26rem;
+        color: #fff;
+        text-align: center;
+        box-sizing: border-box;
+        padding: .33rem .1rem;
+        line-height: .35rem;
+        overflow: hidden;
+        background-color: #78b9ac;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .rui-erweima{
+        width: 3.4rem;
+        height: 3.4rem;
+        position: absolute;
+        top: .3rem;
+        left: .3rem;
+    }
+    .rui-chatu{display: none;}
+    .rui-chatu0{
+        width: calc(100% - .6rem);
+        margin: .3rem;
+        display: block;
+    }
+    .rui-head-name{
+        color: #0e0e0e;
+        font-size: .36rem;
+        padding-left: .2rem;
+        margin: 0 .3rem;
+        border-left: .06rem solid #78b9ac;
+    }
+    .rui-text{
+        margin: 0 .3rem;
+    }
+    .rui-text-detail{
+        color: #1b1b1b;
+        font-size: .3rem;
+        line-height: .45rem;
+        margin-top: .4rem;
+        text-indent: 2em;
+    }
+    /* .rui-content.page2{background-color: #fff;} */
+    .rui-author{
+        color: #0e0e0e;
+        font-size: .36rem;
+        text-align: right;
+        margin-bottom: .3rem;
+    }
+    .rui-content.page3{
+        background: url(../../images/mbanner-2.jpg) no-repeat center top/100% 100%;
+        height: 3.36rem;
+        /* margin-bottom: 50px; */
+        position: relative;
+    }
+    .rui-page2-name{
+        background-color: #78b9ac;
+        font-size: .34rem;
+        padding: .3rem;
+        color: #fff;
+        position: absolute;
+        left: .3rem;
+        bottom: 0;
+    }
+    .rui-page2-left{width: 100%;}
+    /* .rui-page2-right{} */
+    .rui-footer.page2{display: none;}
+    .rui-head-name.page3{display: none;}
+    #container{
+        width: 100%;
+        height: 100%;
+    }
+    .rui-footer{
+        height: 1.4rem;
+        line-height: 1.4rem;
+        background-color: #3d4146;
+        color: #fff;
+        font-size: .20rem;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 .3rem;
+    }
+    .rui-footer-erwei{
+        float: right;
+        vertical-align: middle;
+    }
+    .rui-footer-erwei img{
+        width: .8rem;
+        height: .8rem;
+        vertical-align: middle;
+        margin-left: .2rem;
+    }
+    .rui-address-list{
+        width: calc(100% - .6rem);
+        height: 4.2rem;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0rem;
+        left: .3rem;
+        z-index: 1000;
+        font-size: .28rem;
+    }
+    .rui-content.page4{
+        height: calc(100% - 2.66rem - 1px);
+    }
+    .rui-address-head{
+        font-size: .3rem;
+        background-color: #78b9ac;
+        height: .9rem;
+        line-height: .9rem;
+        color: #fff;
+        padding: 0 .3rem;
+    }
+    .rui-address-list-box{
+        height: 3.3rem;
+        overflow-y: auto;
+        box-sizing: border-box;
+        padding: 0 .3rem .3rem;
+        position: relative;
+    }
+    .rui-address-li{
+        height: 1.1rem;
+        box-sizing: border-box;
+        padding: .25rem 0;
+        border-bottom: 1px solid #e7e7e7;
+        position: relative;
+        padding-left: .55rem;
+    }
+    .rui-address-li p:last-child{
+        color: #989898;
+        font-size: .26rem;
+        height: .3rem;
+        line-height: .3rem;
+        overflow: hidden;
+    }
+    .rui-address-li p:first-child{
+        color: #1b1b1b;
+        font-size: .28rem;
+        height: .3rem;
+        line-height: .3rem;
+        overflow: hidden;
+    }
+    .rui-address-li::before{
+        content: attr(param);
+        display: block;
+        width: .4rem;
+        height: .5rem;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        color: #fff;
+        background: url('../../images/iconmarkgreen.png') no-repeat center center/100% 100%;
+        overflow: hidden;
+        text-align: center;
+        font-size: .2rem;
+        line-height: .4rem;
+    }
+    .rui-address-li0:last-child{border: none;}
+    .rui-address-li:last-child{border: none;}
+    .rui-address-li0{
+        height: 1rem;
+        line-height: 1rem;
+        box-sizing: border-box;
+        border-bottom: 1px solid #e7e7e7;
+        color: #1b1b1b;
+        font-size: .26rem;
+    }
+    .rui-marker-btn{
+        color: #78b9ac;
+        font-size: .28rem;
+        border:1px solid #78b9ac;
+        position: absolute;
+        height: .6rem;
+        line-height: .6rem;
+        padding: 0 .3rem;
+        position: absolute;
+        top: .2rem;
+        right: .3rem;
+        background-color: #fff;
+    }
+    .rui-address-head.return{
+        background:#78b9ac url('../../images/iconback.png') no-repeat .3rem center/.18rem .3rem;
+        padding-left: .55rem;
+    }
+}
