@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rattenking 的DEMO导航</title>
+    <script src="http://rattenking.gitee.io/blog/vue/assets/vue.js"></script>
+    <style>
+        body{margin: 0;}
+        #app{
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        .rui-index-head{
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+            font-size: 40px;
+        }
+        .rui-list-li{
+            height: 30px;
+            line-height: 30px;
+            /* display: inline-block; */
+        }
+        .rui-list-li-a{
+            text-decoration: none;
+            color: #222;
+        }
+        .rui-list-li-a:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="rui-index-head">Rattenking DEMO NAV</div>
+        <ol>
+            <li class="rui-list-li" v-for="item in items">
+                <a class="rui-list-li-a" :href="item.url"  v-text="item.title"></a>
+            </li>
+        </ol>
+    </div>
+    <script>
+        var obj = [
+            {
+                title: '导航栏滑动渐变',
+                url: 'http://rattenking.gitee.io/blog/01/index.html'
+            },
+            {
+                title: '前端一张图片上传预览',
+                url: 'http://rattenking.gitee.io/blog/02/file.html'
+            },
+            {
+                title: '前端多张图片上传预览',
+                url: 'http://rattenking.gitee.io/blog/03/more_pic_file.html'
+            },
+            {
+                title: '页面自动滑动到指定位置',
+                url: 'http://rattenking.gitee.io/blog/04/index.html'
+            },
+            {
+                title: '圣诞节雪花飘落',
+                url: 'http://rattenking.gitee.io/blog/05/index.html'
+            },
+            {
+                title: 'wap导航栏随楼层滑动高亮',
+                url: 'http://rattenking.gitee.io/blog/06/scrollFloorWap.html'
+            },
+            {
+                title: 'web导航栏随楼层滑动高亮',
+                url: 'http://rattenking.gitee.io/blog/06/scrollFloorWeb.html'
+            },
+            {
+                title: '百分比圆动画',
+                url: 'http://rattenking.gitee.io/blog/07/circle.html'
+            },
+            {
+                title: '长方体动画制作',
+                url: 'http://rattenking.gitee.io/blog/08/canvas.html'
+            },
+            {
+                title: '炫酷字体动画',
+                url: 'http://rattenking.gitee.io/blog/09/fontChange.html'
+            },
+            {
+                title: 'CSS代码格式化工具',
+                url: 'http://rattenking.gitee.io/blog/10/%E4%BB%A3%E7%A0%81%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%B7%A5%E5%85%B7.html'
+            },
+            {
+                title: '在线取色器工具',
+                url: 'http://rattenking.gitee.io/blog/11/index.html'
+            },
+            {
+                title: '三像素图片动画',
+                url: 'http://rattenking.gitee.io/blog/12/index.html'
+            },
+            {
+                title: 'echarts地图动画',
+                url: 'http://rattenking.gitee.io/blog/13/index.html'
+            },
+            {
+                title: '二维码解析工具',
+                url: 'http://rattenking.gitee.io/blog/15/index.html'
+            },
+            {
+                title: '二维码生成工具',
+                url: 'http://rattenking.gitee.io/blog/16/index.html'
+            },
+            {
+                title: 'PDF生成工具',
+                url: 'http://rattenking.gitee.io/blog/17/index.html'
+            },
+            {
+                title: 'AI五子棋',
+                url: 'http://rattenking.gitee.io/blog/18/index.html'
+            },
+            {
+                title: '满屏切换动画',
+                url: 'http://rattenking.gitee.io/blog/19/fullScreenScroll.html'
+            },
+            {
+                title: '富文本编辑器',
+                url: 'http://rattenking.gitee.io/blog/editor/index.html'
+            },
+            {
+                title: '起始点跳高德地图路线规划',
+                url: 'http://rattenking.gitee.io/blog/ghzy/index.html'
+            },
+            {
+                title: '双飞翼布局',
+                url: 'http://rattenking.gitee.io/blog/grailLayout/index.html'
+            },
+            {
+                title: '百度地图的浏览器定位API',
+                url: 'http://rattenking.gitee.io/blog/map/index.html'
+            },
+            {
+                title: 'MUI的搜索列表自定义热门定位',
+                url: 'http://rattenking.gitee.io/blog/muiIndexedList/page/indexed-list.html'
+            },
+            {
+                title: 'Markdown文档编辑预览工具',
+                url: 'http://rattenking.gitee.io/blog/readMarkdown/index.html'
+            },
+            {
+                title: '导航栏随滑动定位到顶部',
+                url: 'http://rattenking.gitee.io/blog/sticky/active.html'
+            },
+            {
+                title: 'VUE基础学习列表',
+                url: 'http://rattenking.gitee.io/blog/vue/index.html'
+            },
+            {
+                title: 'VUE-CLI实战----收银系统',
+                url: 'http://rattenking.gitee.io/blog/vuePos/index.html#/'
+            },
+            {
+                title: '图片在线转base64',
+                url: 'http://rattenking.gitee.io/stone/demo/imgbase64/imgbase64.html'
+            }
+        ]
+        var app = new Vue({
+            el : "#app",
+            data : {
+                items : obj
+            }
+        });
+    </script>
+</body>
+</html>
