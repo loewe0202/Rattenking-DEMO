@@ -69,17 +69,17 @@
                 <div class="rui-address-head">门店地址</div>
                 <div class="rui-address-list-box">
                     <div class="rui-address-li" param="1" onClick="markerFn(1)">
-                        <p>观合中医(春熙店)</p>
-                        <p>东大街188号时代华章2层</p>
+                        <p>观合中医(中和店)</p>
+                        <p>中和迎江路92号</p>
                     </div>
-                    <div class="rui-address-li" param="2" onClick="markerFn(2)">
+                    <!-- <div class="rui-address-li" param="2" onClick="markerFn(2)">
                         <p>观合中医(双林店)</p>
                         <p>科华南路10号4栋1层06号</p>
                     </div>
                     <div class="rui-address-li" param="3" onClick="markerFn(3)">
                         <p>观合中医(南站店)</p>
                         <p>成都市武侯区长益路11号附6号</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="rui-address-list" id="detail" style="display: none">
@@ -135,22 +135,10 @@
             // 标记观合中医院的位置
             var markers = [{
                 icon: './images/iconmarkgreen.png',
-                title: '观合中医(春熙店)',
-                address: '东大街188号时代华章2层',
-                phone: '18684006660',
-                position: [104.07844899999998, 30.651652]
-            }, {
-                icon: './images/iconmarkred.png',
-                title: '观合中医(双林店)',
-                address: '科华南路10号4栋1层06号',
-                phone: '18684006661',
-                position: [104.07909000000001, 30.6082]
-            }, {
-                icon: './images/iconmarkgreen.png',
-                title: '观合中医(南站店)',
-                address: '成都市武侯区长益路11号附6号',
+                title: '观合中医(中和店)',
+                address: '中和迎江路92号',
                 phone: '18888888888',
-                position: [104.030372, 30.624558]
+                position: [104.0863,30.545899]
             }];
             // 清除地图覆盖物
             map.clearMap();  

@@ -4,7 +4,7 @@ a{text-decoration: none;color:#1a1a1a;}
 em{font-style: normal;}
 @media only screen and (min-width: 750px) {
     .rui-nav-content{
-        padding: 0 120px;
+        padding: 0 50px;
         height: 140px;
         line-height: 140px;
         box-sizing: border-box;
@@ -256,12 +256,17 @@ em{font-style: normal;}
         outline: medium;
     }
     .rui-content.page1{
-        background: url(../../images/banner-bg.jpg) no-repeat center top/1920px 939px;
+        background: url(../../images/bg.png) no-repeat center top/1920px 939px;
         height:calc(100% - 140px);
+    }
+    .rui-banner-text{
+        position: absolute;
+        top: 80px;
+        left: 80px;
     }
     .rui-chatu0{display: none;}
     .rui-content.page3{
-        background: url(./images/banner-2.jpg) no-repeat center top;
+        background: url(../../images/banner-2.jpg) no-repeat center top;
         height: 335px;
         margin-bottom: 50px;
     }
@@ -271,6 +276,7 @@ em{font-style: normal;}
     .rui-footer span em{font-size: 36px;}
 }
 @media only screen and (max-width: 750px) {
+    .rui-banner-text{display: none;}
     .rui-nav-logo{
         height: 1.26rem;
         float: left;
@@ -291,7 +297,7 @@ em{font-style: normal;}
         line-height: 1.26rem;
         font-size: .28rem;
         color: #989898;
-        padding: 0 .5rem;
+        padding: 0 .13rem;
     }
     .rui-nav-li a{
         color: #989898;
@@ -412,12 +418,13 @@ em{font-style: normal;}
         background-color: #3d4146;
         color: #fff;
         font-size: .20rem;
-        position: fixed;
+        position: relative;
         bottom: 0;
         left: 0;
         width: 100%;
         box-sizing: border-box;
         padding: 0 .3rem;
+        overflow: hidden;
     }
     .rui-footer-erwei{
         float: right;
